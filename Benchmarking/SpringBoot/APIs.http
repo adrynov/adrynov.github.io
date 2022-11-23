@@ -1,0 +1,32 @@
+### Retrieve all films
+GET http://localhost:8080/api/films
+Accept: application/json
+
+### Retrieve a film by ID
+GET http://localhost:8080/api/films/133
+Accept: application/json
+
+### Find films by title
+GET http://localhost:8080/api/films?title=Chamber%20Italian
+Accept: application/json
+
+### Create new film
+POST http://localhost:8080/api/films
+Content-Type: application/json
+
+{
+  "id": 666,
+  "title": "Jurassic World: Fallen Kingdom",
+  "description": "Действие фильма в начале происходит в 2016 году, а основные события — в 2018.",
+  "year": 2018,
+  "length": 128
+}
+
+### Delete film
+DELETE http://localhost:8080/api/films/666
+
+#PUT    /api/tutorials/: id    update a Tutorial by: id
+#DELETE    /api/tutorials/: id    delete a Tutorial by: id
+#DELETE    /api/tutorials    delete all Tutorials
+#GET    /api/tutorials/published    find all published Tutorials
+#GET    /api/tutorials?title=[keyword]    find all Tutorials which title contains keyword
