@@ -1,5 +1,6 @@
-package com.adrynov.Benchmarking.data;
+package com.adrynov.Benchmarking.domain;
 
+import com.adrynov.Benchmarking.data.FilmActorId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;

@@ -1,6 +1,6 @@
 package com.adrynov.Benchmarking.data;
 
-import com.adrynov.Benchmarking.data.Film;
+import com.adrynov.Benchmarking.domain.Film;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package com.adrynov.Benchmarking.api;
 
-import com.adrynov.Benchmarking.data.Film;
+import com.adrynov.Benchmarking.domain.Film;
 import com.adrynov.Benchmarking.data.FilmRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
