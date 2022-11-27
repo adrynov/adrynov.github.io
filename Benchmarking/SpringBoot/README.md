@@ -1,25 +1,23 @@
-This typical CRUD is built with Spring Boot + PostgresQL
+# API with Spring Boot 3
+
+Simple back-end Java RESTful API using Spring Boot that connects with a PostgreSQL database via JPA.
 
 ## Run App
 
 Run the application with command: `mvn spring-boot:run`
 
-We will build a Spring Boot + PostgreSQL + Rest CRUD API for a Tutorial application in that:
+## Observability
 
+https://spring.io/blog/2022/10/12/observability-with-spring-boot-3
+https://www.baeldung.com/micrometer
 
+We will get insights into the application using Micrometer, a library for collecting metrics.
 
-Each Tutotial has id, title, description, published status.
-Apis help to create, retrieve, update, delete Tutorials.
-Apis also support custom finder methods such as find by published status or by title.
-These are APIs that we need to provide:
+We will use Prometheus instead of Spring Boot Actuator and Grafana instead of Spring Boot Admin.
 
-Methods Urls Actions
-POST /api/tutorials create new Tutorial
-GET /api/tutorials retrieve all Tutorials
-GET /api/tutorials/:id retrieve a Tutorial by :id
-PUT /api/tutorials/:id update a Tutorial by :id
-DELETE /api/tutorials/:id delete a Tutorial by :id
-DELETE /api/tutorials delete all Tutorials
-GET /api/tutorials/published find all published Tutorials
-GET /api/tutorials?title=[keyword]    find all Tutorials which title contains keyword
-– We make CRUD operations & finder methods with Spring Data JPA’s JpaRepository.
+Metrics are collected from and held in a Meter Registry. The registry implementation can be
+registered in a monitoring system such as Atlas, Inflix or Prometheus.
+
+[Micrometer Tracing](https://micrometer.io/docs/tracing) is for efficiently recording application metrics with
+Micrometer,
+and implementing tracing through providers, such as OpenZipkin or OpenTelemetry.

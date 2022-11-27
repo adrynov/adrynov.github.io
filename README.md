@@ -1,5 +1,14 @@
 # Andrei Drynov's Portfolio
 
+TODO:
+
+https://yourbrainoncomputers.com/using-github-to-build-a-portfolio-ultimate-guide/
+https://github.com/katiehuangx/How-to-Create-a-GitHub-Portfolio/blob/main/README.md
+https://towardsdatascience.com/how-to-create-a-compelling-github-portfolio-a229e7472a92
+https://www.dataquest.io/blog/how-to-share-data-science-portfolio/
+https://betterprogramming.pub/how-to-generate-awesome-github-profile-portfolio-pages-de6ff0d79e2d
+https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd
+
 
 **Why I created this repo?**
 
