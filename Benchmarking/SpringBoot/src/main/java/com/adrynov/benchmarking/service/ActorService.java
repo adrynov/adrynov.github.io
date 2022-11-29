@@ -29,4 +29,8 @@ public class ActorService {
     public Actor getByName(String lastName) {
         return repository.findActorByLastName(lastName);
     }
+
+    public long countActors() {
+        return repository.count();
+    }
 }
