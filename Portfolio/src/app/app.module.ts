@@ -4,13 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './components/footer.component';
-import { HeaderComponent } from './components/header.component';
-import { HeroComponent } from './components/hero.component';
-import { MainComponent } from './components/main.component';
+import { ContactComponent } from './main/contact.component';
+import { MainComponent } from './main/main.component';
+import { PortfolioItemComponent } from './portfolio/porfolio-item.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 @NgModule({
-  declarations: [AppComponent, MainComponent, FooterComponent, HeaderComponent, HeroComponent],
+  declarations: [
+    AppComponent,
+    MainComponent,
+    ContactComponent,
+    PortfolioComponent,
+    PortfolioItemComponent
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
