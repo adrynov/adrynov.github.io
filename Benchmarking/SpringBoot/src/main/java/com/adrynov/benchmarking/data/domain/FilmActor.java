@@ -1,27 +1,21 @@
-package com.adrynov.benchmarking.domain;
+package com.adrynov.benchmarking.data.domain;
 
-import com.adrynov.benchmarking.data.FilmActorId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
+import com.adrynov.benchmarking.data.domain.keys.FilmActorId;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "film_actor")
-@IdClass(FilmActorId.class)
+@IdClass(FilmActorId.class)  // primary key (actor_id, film_id)
 public class FilmActor {
-    //    @EmbeddedId
-//    private FilmActorId id;
-
     @Id
     private short actorId;
 
     @Id
     private short filmId;
 
-
-//    primary key (actor_id, film_id)
-
+    @ManyToOne
+    @JoinColumn(name = "film_id", nullable = false)
+    private Film film;
 
     public FilmActor() {
     }

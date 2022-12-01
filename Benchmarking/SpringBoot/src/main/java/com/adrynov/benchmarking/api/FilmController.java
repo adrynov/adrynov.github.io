@@ -1,7 +1,7 @@
 package com.adrynov.benchmarking.api;
 
-import com.adrynov.benchmarking.data.FilmRepository;
-import com.adrynov.benchmarking.domain.Film;
+import com.adrynov.benchmarking.data.domain.Film;
+import com.adrynov.benchmarking.data.repository.FilmRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,11 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin("http://localhost:8080")
 @RestController
 @RequestMapping("/api/films")
+@CrossOrigin("http://localhost:8080")
 public class FilmController {
-
     private final FilmRepository repository;
 
     public FilmController(FilmRepository repository) {
@@ -46,14 +45,13 @@ public class FilmController {
     public ResponseEntity<Film> getFilm(@PathVariable("id") long id) {
         var data = repository.findById(id);
 
-        if (data.isPresent()) {
-            return new ResponseEntity<>(data.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
+        return data
+                .map(film -> new ResponseEntity<>(film, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @PostMapping()
+    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Film> addFilm(@RequestBody Film data) {
         try {
             Film film = new Film(data.getTitle(), data.getDescription());

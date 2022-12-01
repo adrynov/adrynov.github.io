@@ -1,7 +1,7 @@
 package com.adrynov.benchmarking.service;
 
-import com.adrynov.benchmarking.data.ActorRepository;
-import com.adrynov.benchmarking.domain.Actor;
+import com.adrynov.benchmarking.data.domain.Actor;
+import com.adrynov.benchmarking.data.repository.ActorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,9 +12,14 @@ import java.util.List;
 public class ActorService {
 
     @Autowired
-    private ActorRepository repository;
+    private  ActorRepository repository;
 
-//    private List<Actor> actors = new ArrayList<>();
+    public Actor createActor(String firstName, String lastName) {
+        return repository
+                .findActorByFirstNameAndLastName(firstName, lastName)
+                .orElse(repository.save(new Actor(firstName, lastName)));
+
+    }
 
     public List<Actor> getAll() {
         List<Actor> actors = new ArrayList<>();
@@ -26,11 +31,11 @@ public class ActorService {
         repository.save(actor);
     }
 
-    public Actor getByName(String lastName) {
+    public Actor findByName(String lastName) {
         return repository.findActorByLastName(lastName);
     }
 
-    public long countActors() {
+    public long total() {
         return repository.count();
     }
 }

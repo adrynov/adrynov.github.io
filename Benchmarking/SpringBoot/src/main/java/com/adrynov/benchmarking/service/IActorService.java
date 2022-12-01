@@ -1,6 +1,6 @@
 package com.adrynov.benchmarking.service;
 
-import com.adrynov.benchmarking.domain.Actor;
+import com.adrynov.benchmarking.data.domain.Actor;
 
 import java.util.List;
 

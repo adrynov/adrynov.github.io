@@ -17,7 +17,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-            <afd-portfolio-item *ngFor="let item of items" [item]="item" class=" col-lg-4 col-md-6 portfolio-item filter-card"></afd-portfolio-item>
+            <afd-portfolio-item *ngFor="let item of items" [item]="item" class="col-lg-4 col-md-6 portfolio-item filter-{{item.kind}}" (deleted)="onItemDeleted($event)"></afd-portfolio-item>
 
         </div>
 

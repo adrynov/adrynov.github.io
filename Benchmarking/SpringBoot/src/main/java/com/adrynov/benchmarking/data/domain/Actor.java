@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.domain;
+package com.adrynov.benchmarking.data.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -22,4 +22,13 @@ public class Actor {
     private String lastName;
 
 //    last_update timestamp default now()                                   not null
+
+
+    public Actor(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public Actor() {
+    }
 }

@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.data;
+package com.adrynov.benchmarking.data.domain.keys;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -12,7 +12,7 @@ public class FilmActorId implements Serializable {
     @Column(name = "actor_id", columnDefinition = "smallint", nullable = false)
     private short actorId;
 
-    @Column(name = "film_id", columnDefinition = "smallint", nullable = false)
+    @Column(name = "film_id", columnDefinition = "smallint", nullable = false, insertable = false, updatable = false)
     private short filmId;
 
     public FilmActorId() {

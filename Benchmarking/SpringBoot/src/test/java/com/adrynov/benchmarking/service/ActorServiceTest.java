@@ -1,7 +1,7 @@
 package com.adrynov.benchmarking.service;
 
-import com.adrynov.benchmarking.data.ActorRepository;
-import com.adrynov.benchmarking.domain.Actor;
+import com.adrynov.benchmarking.data.repository.ActorRepository;
+import com.adrynov.benchmarking.data.domain.Actor;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -46,7 +46,7 @@ public class ActorServiceTest {
 
     @Test
     void loginSuccessIfActor() {
-        Actor actor = actorService.getByName("Mel Gibson");
+        Actor actor = actorService.findByName("Mel Gibson");
     }
 
 }

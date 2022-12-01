@@ -1,6 +1,8 @@
-package com.adrynov.benchmarking.domain;
+package com.adrynov.benchmarking.data.domain;
 
 import jakarta.persistence.*;
+
+import java.util.Set;
 
 /**
  * Entity model.
@@ -29,6 +31,9 @@ public class Film {
     @Column(name = "length", columnDefinition = "smallint")
     private short length;
 
+
+    @OneToMany(mappedBy = "film")
+    private Set<FilmActor> filmActors;
 
     public Film(String title, String description) {
         this.title = title;

@@ -78,4 +78,13 @@ export class PortfolioComponent implements OnInit {
   ngOnInit() {
     console.log(this.items);
   }
+
+  onItemDeleted(item: PortfolioItem) {
+    console.log('Lets remove the item from the list');
+
+    if (this.items.includes(item)) {
+      const index = this.items.indexOf(item);
+      this.items.splice(index, 1);
+    }
+  }
 }
