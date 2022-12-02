@@ -1,6 +1,7 @@
 package com.adrynov.benchmarking.data.domain;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 
 import java.util.Set;
 
@@ -16,6 +17,7 @@ public class Film {
     private Long id;
 
     @Column(name = "title", length = 255)
+    @NotBlank(message = "Title is mandatory")
     private String title;
 
     //    @Lob

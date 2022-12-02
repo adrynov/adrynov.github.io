@@ -35,3 +35,7 @@ GET http://localhost:8080/films?page=0&size=3&sort=title,asc
 
 ### Profile example
 GET http://localhost:8080/profile/actors
+
+
+### Get customers
+GET http://localhost:8080/api/customers

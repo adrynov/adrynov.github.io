@@ -11,12 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/films")
-@CrossOrigin("http://localhost:8080")
+//@CrossOrigin("http://localhost:8080")
 public class FilmController {
-    private final FilmRepository repository;
 
-    public FilmController(FilmRepository repository) {
-        this.repository = repository;
+    private final FilmRepository filmRepository;
+
+    public FilmController(FilmRepository filmRepository) {
+        this.filmRepository = filmRepository;
     }
 
     @GetMapping()
@@ -25,9 +26,9 @@ public class FilmController {
             List<Film> films = new ArrayList<>();
 
             if (title != null) {
-                films.addAll(repository.findByTitleContaining(title));
+                films.addAll(filmRepository.findByTitleContaining(title));
             } else {
-                films.addAll(repository.findAll());
+//                films.addAll(filmRepository.findAll());
             }
 
             if (films.isEmpty()) {
@@ -43,7 +44,7 @@ public class FilmController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Film> getFilm(@PathVariable("id") long id) {
-        var data = repository.findById(id);
+        var data = filmRepository.findById(id);
 
         return data
                 .map(film -> new ResponseEntity<>(film, HttpStatus.OK))
@@ -59,7 +60,7 @@ public class FilmController {
             film.setYear(data.getYear());
             film.setLength(data.getLength());
 
-            var entity = repository.save(film);
+            var entity = filmRepository.save(film);
             return new ResponseEntity<>(entity, HttpStatus.CREATED);
 
         } catch (Exception e) {
@@ -71,7 +72,7 @@ public class FilmController {
     public ResponseEntity<Film> updateFilm(@PathVariable("id") long id, @RequestBody Film film) {
         if (id != film.getId()) throw new IllegalArgumentException("IDs do not match");
 
-        var entity = repository.findById(id);
+        var entity = filmRepository.findById(id);
 
         if (entity.isPresent()) {
             Film updatedFilm = entity.get();
@@ -87,7 +88,7 @@ public class FilmController {
     @DeleteMapping("/{id}")
     public ResponseEntity<HttpStatus> deleteFilm(@PathVariable("id") long id) {
         try {
-            repository.deleteById(id);
+            filmRepository.deleteById(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

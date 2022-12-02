@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.api;
+package com.adrynov.benchmarking.integration;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

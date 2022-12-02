@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.service;
+package com.adrynov.benchmarking.service.contract;
 
 import com.adrynov.benchmarking.data.domain.Actor;
 
