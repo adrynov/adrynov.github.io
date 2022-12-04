@@ -2,12 +2,15 @@ package com.adrynov.benchmarking.data.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
-/**
- * Entity model.
- */
+@Getter
+@Setter
 @Entity
 @Table(name = "film")
 public class Film {
@@ -33,6 +36,13 @@ public class Film {
     @Column(name = "length", columnDefinition = "smallint")
     private short length;
 
+    // actors by film
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name = "film_actor",
+            joinColumns = {@JoinColumn(name = "film_id")},
+            inverseJoinColumns = {@JoinColumn(name = "actor_id")}
+    )
+    private List<Actor> actors = new ArrayList<>();
 
     @OneToMany(mappedBy = "film")
     private Set<FilmActor> filmActors;
@@ -45,67 +55,4 @@ public class Film {
     public Film() {
     }
 
-
-    //    rental_duration  smallint      default 3                                     not null,
-
-//    @Column(name="ORDER_COST", updatable=false, precision=4, scale=2)
-//    public BigDecimal getCost() { return cost; }
-    //    rental_rate      numeric(4, 2) default 4.99
-    //
-    //    not null,
-
-    //    replacement_cost numeric(5, 2) default 19.99                                 not null,
-    //    rating           mpaa_rating   default 'G'::mpaa_rating,
-    //    last_update      timestamp     default now()                                 not null,
-    //    special_features text[],
-    //    fulltext         tsvector
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public short getLanguageId() {
-        return languageId;
-    }
-
-    public void setLanguageId(short languageId) {
-        this.languageId = languageId;
-    }
-
-    public short getLength() {
-        return length;
-    }
-
-    public void setLength(short length) {
-        this.length = length;
-    }
 }

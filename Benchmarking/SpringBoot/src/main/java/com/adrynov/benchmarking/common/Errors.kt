@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.models
+package com.adrynov.benchmarking.common
 
 import java.io.File
 import javax.sql.DataSource

@@ -1,13 +1,13 @@
 package com.adrynov.benchmarking.data.repository;
 
 import com.adrynov.benchmarking.data.domain.Film;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface FilmRepository extends CrudRepository<Film, Long> {
+public interface FilmRepository extends JpaRepository<Film, Long> {
 
 //    @Query(value = "SELECT title FROM film f INNER JOIN film_actor fa on f.film_id = fa.film_id WHERE actor_id = ?1", nativeQuery = true)
 //    Collection<String> findFilmsByActor(@Param("actorId") int actorId);
