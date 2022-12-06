@@ -1,7 +1,10 @@
 package com.adrynov.benchmarking.data.domain;
 
 import com.adrynov.benchmarking.data.domain.keys.FilmRatingPk;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "film_rating")

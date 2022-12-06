@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.data.domain.embed;
+package com.adrynov.benchmarking.data.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

@@ -1,6 +1,6 @@
 package com.adrynov.benchmarking.data.domain;
 
-import com.adrynov.benchmarking.data.domain.embed.Person;
+import com.adrynov.benchmarking.data.domain.Person;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
