@@ -1,9 +1,69 @@
-# Calling APIs
+# Benchmarking
 
-Focusing on calling different APIs and using various languages/frameworks in order to get hands-on experience working with real world APIs.
+I decided to compare multiple web frameworks in terms of ease of development and performance and in order to get hands-on experience working with real world APIs.
 
-## Java - REST
+https://medium.com/@putuprema/spring-boot-vs-asp-net-core-a-showdown-1d38b89c6c2d
 
-Monitor Twitter for mentions of .....  using Azure Cognitive Services, Twitter and Twilio
+## ASP.NET 7
 
-A Twitter user sends a tweet on a specific topic. Twitter API forwards the tweet to the app. The client app then analyzes the contents using Azure Cognitive Services. Once the tweet sentiment is analyzed, an SMS message will be delivered to the recipient using Twilio SMS Messaging API.
+This Microsoft framework uses C#.
+
+Controller
+Model Binding & Validation
+Exception Handling
+
+Data Access (Repository and ORM)
+
+https://www.sqlservertutorial.net/
+
+Dependency Injection
+Authentication & Authorization
+Performance
+
+
+## Spring Boot 3
+
+I created the backend project using [Spring Initializer](https://start.spring.io/), which is a web-based tool for
+creating Spring Boot projects.
+
+The [Sample Database](https://www.postgresqltutorial.com/postgresql-getting-started/load-postgresql-sample-database/)
+is loaded into the PostgreSQL server.
+
+
+Controller
+Model Binding & Validation
+Exception Handling
+Data Access (Repository and ORM)
+Dependency Injection
+Authentication & Authorization
+Performance
+
+
+
+## Node.js
+
+Controller
+Model Binding & Validation
+Exception Handling
+Data Access (Repository and ORM)
+Dependency Injection
+Authentication & Authorization
+Performance
+
+
+
+## Python
+
+Controller
+Model Binding & Validation
+Exception Handling
+Data Access (Repository and ORM)
+Dependency Injection
+Authentication & Authorization
+Performance
+
+-
+
+## Licensing
+
+This project is licensed under Unlicense license. This license does not require you to take the license with you to your project.
