@@ -1,27 +1,23 @@
 package com.adrynov.benchmarking.data.repository;
 
 import com.adrynov.benchmarking.data.domain.Customer;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface CustomerRepository extends CrudRepository<Customer, Integer> {
-    Customer findCustomerByFirstNameAndLastName(String firstName, String lastName);
+    @Query("SELECT c FROM Customer c WHERE c.person.firstName = ?1 AND c.person.lastName = ?2")
+    Customer findCustomerByName(String firstName, String lastName);
 
-//    List<Student> findByFullTime(boolean fullTime);
-//    List<Student> findByAge(Integer age);
-//    List<Student> findByAttendeeLastName(String last);
-//
-//    //Query Methods with Clauses and Exrpessions
-//    Student findByAttendeeFirstNameAndAttendeeLastName(String firstName, String lastName);
-//    Student findByAttendee(Person person);
-//    List<Student> findByAgeGreaterThan(int minimumAge);
-//    List<Student> findByAgeLessThan(int maximumAge);
-//    List<Student> findByAttendeeLastNameIgnoreCase(String lastName);
-//    List<Student> findByAttendeeLastNameLike(String likeString);
-//    Student findFirstByOrderByAttendeeLastNameAsc();
-//    Student findTopByOrderByAgeDesc();
-//    List<Student> findTop3ByOrderByAgeDesc();
-//}
+    @Query("SELECT c from Customer c WHERE c.person.lastName = :lastName")
+    List<Customer> findCustomerByLastName(String lastName);
 
+//    @Query("SELECT c from Customer c JOIN c.person p where p.lastName = ?1")
+//    List<Person> findCustomersByLastName(String lastName);
+
+//    @Query("Select new CourseView (c.name, c.lastName, c.department.name) from Course c where c.id=?1")
+//    CourseView getCourseView(int courseId) ;
 }

@@ -25,6 +25,6 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public Customer getCustomerByName(String firstName, String lastName) {
-        return customerRepository.findCustomerByFirstNameAndLastName(firstName, lastName);
+        return customerRepository.findCustomerByName(firstName, lastName);
     }
 }

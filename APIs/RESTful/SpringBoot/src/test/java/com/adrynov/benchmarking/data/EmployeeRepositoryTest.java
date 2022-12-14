@@ -8,7 +8,7 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -31,7 +31,23 @@ class EmployeeRepositoryTest {
 
         employeeRepository.deleteById(employee.getId());
         assertEquals(2, employeeRepository.count());
+    }
 
+    @Test
+    void employeeSimpleQuery() {
+        var stephens = employeeRepository.findByPersonLastName("Stephens");
+        assertEquals(1, stephens.size());
+
+        Employee mike = employeeRepository.findByUserName("Mike");
+        assertTrue(mike.getId() == 1);
+
+        var employee = new Employee("Andrei", "Drynov");
+        employee.setUserName("adrynov");
+        employee.setAddressId(800);
+
+        employeeRepository.save(employee);
+        var andrei = employeeRepository.findByPerson(employee.getPerson());
+        assertNotNull(andrei);
     }
 
 }

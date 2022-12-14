@@ -79,6 +79,9 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:6.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:6.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-expression:6.0.2" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: io.projectreactor:reactor-test:3.5.0" level="project" />
+    <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.15" level="project" />
     <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
@@ -109,6 +112,12 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:6.0.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:6.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb-reactive:3.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-reactivestreams:4.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:bson:4.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mongodb:mongodb-driver-core:4.8.0" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Maven: org.mongodb:bson-record-codec:4.8.0" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-mongodb:4.0.0" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.h2database:h2:2.1.214" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.postgresql:postgresql:42.5.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />

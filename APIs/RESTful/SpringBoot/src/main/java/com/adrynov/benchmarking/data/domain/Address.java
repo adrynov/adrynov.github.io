@@ -1,4 +1,4 @@
-package com.adrynov.benchmarking.domain;
+package com.adrynov.benchmarking.data.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;

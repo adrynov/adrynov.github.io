@@ -3,6 +3,7 @@ package com.adrynov.benchmarking.service;
 import com.adrynov.benchmarking.data.repository.ActorRepository;
 import com.adrynov.benchmarking.data.domain.Actor;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -13,6 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
+@Disabled
 public class ActorServiceTest {
     @Mock
     private ActorRepository actorRepository;

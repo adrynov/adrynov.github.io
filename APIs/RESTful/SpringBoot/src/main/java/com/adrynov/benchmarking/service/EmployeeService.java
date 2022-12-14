@@ -13,13 +13,13 @@ public class EmployeeService {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    public Employee getEmployeeByName(String name) {
-        return employeeRepository.findByPerson_FirstName(name);
-    }
+//    public Employee getEmployeeByName(String name) {
+//        return employeeRepository.findByPersonLastName(name);
+//    }
 
     public List<Employee> getAllEmployees() {
         List<Employee> employees = new ArrayList<>();
-         employeeRepository.findAll().forEach(employees::add);
-         return employees;
+        employeeRepository.findAll().forEach(employees::add);
+        return employees;
     }
 }

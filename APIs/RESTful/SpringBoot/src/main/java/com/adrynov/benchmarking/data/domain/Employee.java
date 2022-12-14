@@ -1,6 +1,5 @@
 package com.adrynov.benchmarking.data.domain;
 
-import com.adrynov.benchmarking.data.domain.Person;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +24,12 @@ public class Employee {
     @Column(name = "address_id", nullable = false)
     private int addressId;
 
+    @Column(name = "email", length = 50, columnDefinition = "varchar(50)")
+    private String email;
+
+    @Column(name = "password", length = 40, columnDefinition = "varchar(40)")
+    private String password;
+
     @Column(name = "store_id", nullable = false)
     private int storeId;
 
@@ -41,8 +46,6 @@ public class Employee {
     }
 
 
-    //    email       varchar(50),
-    //    password    varchar(40),
     //    last_update timestamp default now() not null,
     //    picture     bytea
 

@@ -5,6 +5,11 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.sql.Date;
+import java.sql.Timestamp;
 
 @Getter
 @Setter
@@ -17,13 +22,16 @@ public class Customer {
     @Column(name = "customer_id", nullable = false)
     private Integer id;
 
-    @Column(name = "first_name", length = 45)
-    @NotBlank(message = "First name is mandatory")
-    private String firstName;
+    @Embedded
+    private Person person;
 
-    @Column(name = "last_name", length = 45)
-    @NotBlank(message = "Last name is mandatory")
-    private String lastName;
+//    @Column(name = "first_name", length = 45)
+//    @NotBlank(message = "First name is mandatory")
+//    private String firstName;
+//
+//    @Column(name = "last_name", length = 45)
+//    @NotBlank(message = "Last name is mandatory")
+//    private String lastName;
 
     @NotBlank(message = "Email is mandatory")
     @Email(message = "Email should be valid")
@@ -33,27 +41,16 @@ public class Customer {
     //    address_id  smallint                not null
     //        references public.address
     //            on update cascade on delete restrict,
-    //    activebool  boolean   default true                   not null,
-    //    create_date date      default ('now'::text)::date       not null,
-    //    last_update timestamp default now(),
-    //    active      integer
-    //);
-    //
-    //alter table public.customer
-    //    owner to postgres;
-    //
-    //create index idx_fk_address_id
-    //    on public.customer (address_id);
-    //
-    //create index idx_fk_store_id
-    //    on public.customer (store_id);
-    //
-    //create index idx_last_name
-    //    on public.customer (last_name);
-    //
-    //create trigger last_updated
-    //    before update
-    //    on public.customer
-    //    for each row
-    //execute procedure public.last_updated();
+    //    active bool  boolean   default true                   not null,
+
+    @CreatedDate
+    @Column(name = "create_date", nullable = false)
+    private Date createAt;
+
+    @LastModifiedDate
+    @Column(name = "last_update")
+    private Timestamp lastUpdated;
+
+    @Column(name = "active", columnDefinition = "int4")
+    private boolean isActive;
 }
