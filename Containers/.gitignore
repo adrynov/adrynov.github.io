@@ -1,1 +1,3 @@
-!.keep
+.docker-compose.swp
+.env
+.vscode
