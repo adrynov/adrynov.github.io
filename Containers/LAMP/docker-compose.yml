@@ -1,0 +1,90 @@
+version: '3.8'
+
+services:
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    # restart: always
+    # command: --default-authentication-plugin=mysql_native_password
+#     command:
+#       - mysqld
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: experiments
+      MYSQL_ROOT_HOST: "0.0.0.0"
+      # MYSQL_ROOT_HOST: 172.17.0.1
+      #  MYSQL_USER: 'user'
+      #  MYSQL_PASSWORD: 'pass'
+#     environment:
+#       TZ: "${TZ}"
+#       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
+#       MYSQL_DATABASE: "${DB_NAME}"
+#       MYSQL_USER: "${DB_USERNAME}"
+#       MYSQL_PASSWORD: "${DB_PASSWORD}"
+    ports:
+      - "${MYSQL_PORT}:3306"
+    # volumes:
+    #   - ./mysql-dump.sql:/dump.sql
+    #  - ./mysql/data/:/var/lib/mysql
+    # networks:
+    #   - website
+    # volumes:
+    #   - ./data:/docker-entry-initdb.d
+    #   - mysqldb-data:/var/lib/mysql
+    #   - './mysql/my.cnf:/etc/mysql/my.cnf'
+
+
+
+networks:
+  website:
+    driver: bridge
+
+volumes:
+  website-data:
+    driver: local
+
+#   php:
+#     build:
+#       context: './php/'
+#       args:
+#        PHP_VERSION: ${PHP_VERSION}
+#     networks:
+#       - backend
+#     volumes:
+#       - ${PROJECT_ROOT}:/var/www/html/
+#     environment:
+#       MYSQL_HOST: "${DB_HOST}"
+#       MYSQL_DATABASE: "${DB_NAME}"
+#       MYSQL_USER: "${DB_USERNAME}"
+#       MYSQL_PASSWORD: "${DB_PASSWORD}"
+#       INSTANCE_NAME: "${INSTANCE_NAME}"
+#       PROJECT_COLOR: "${PROJECT_COLOR}"
+#     container_name: ${DOCKER_IMAGE_PREFIX}php
+#     restart: always
+
+#   apache:
+#     build:
+#       context: './apache/'
+#       args:
+#         APACHE_VERSION: ${APACHE_VERSION}
+#     depends_on:
+#       - php
+#     networks:
+#       - frontend
+#       - backend
+#     ports:
+#       - "${EXTERNAL_APACHE_PORT}:80"
+#     volumes:
+#       - ${PROJECT_ROOT}:/var/www/html/
+#     container_name: ${DOCKER_IMAGE_PREFIX}apache
+#     restart: always
+
+
+# networks:
+#   frontend:
+#     name: ${DOCKER_IMAGE_PREFIX}frontend
+#   backend:
+#     name: ${DOCKER_IMAGE_PREFIX}backend
+# volumes:
+#     data:
