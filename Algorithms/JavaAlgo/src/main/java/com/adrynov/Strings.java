@@ -1,12 +1,15 @@
 package com.adrynov;
 
+/**
+ * String algorithms
+ */
 public class Strings {
 
     /**
      * Checks if a certain character exists at an even index in the specified string.
      *
      * @param input Input string
-     * @param item A character
+     * @param item  A character
      * @return True if the item's index is even
      */
     public static boolean isAtEventIndex(String input, char item) {
@@ -58,6 +61,25 @@ public class Strings {
 
 
         return true;
+    }
+
+    /**
+     * Reverse a string.
+     *
+     * @param input Input string
+     * @return Reversed string
+     */
+    public static String reverse(String input) {
+        if (input == null || input.isEmpty()) return input;
+
+        StringBuffer reversed = new StringBuffer();
+//        return reversed.append(input)reverse().toString();
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed.append(input.charAt(i));
+        }
+
+        return reversed.toString();
     }
 
 }

@@ -1,8 +1,7 @@
 import com.adrynov.Strings;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringsTest {
 
@@ -20,6 +19,14 @@ public class StringsTest {
         assertFalse(Strings.isAtEventIndex("HeLlo", 'T'));
         assertFalse(Strings.isAtEventIndex("", 'H'));
         assertFalse(Strings.isAtEventIndex(null, 'H'));
+    }
+
+    @Test
+    void stringManipulation() {
+        assertEquals(null, Strings.reverse(null));
+        assertEquals("", Strings.reverse(""));
+        assertEquals("olleH", Strings.reverse("Hello"));
+        assertEquals("socat", Strings.reverse("tacos"));
     }
 
 }

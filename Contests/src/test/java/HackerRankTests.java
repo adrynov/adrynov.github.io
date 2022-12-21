@@ -12,4 +12,9 @@ public class HackerRankTests {
         assertEquals("16 24", HackerRank.miniMaxSum(nums1));
     }
 
+    @Test
+    public void convertToMilitaryTime() {
+
+    }
+
 }
