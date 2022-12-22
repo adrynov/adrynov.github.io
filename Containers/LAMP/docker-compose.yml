@@ -2,89 +2,159 @@ version: '3.8'
 
 services:
 
-  mysql:
-    image: mysql
-    container_name: mysql
-    # restart: always
-    # command: --default-authentication-plugin=mysql_native_password
-#     command:
-#       - mysqld
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: experiments
-      MYSQL_ROOT_HOST: "0.0.0.0"
-      # MYSQL_ROOT_HOST: 172.17.0.1
-      #  MYSQL_USER: 'user'
-      #  MYSQL_PASSWORD: 'pass'
-#     environment:
-#       TZ: "${TZ}"
-#       MYSQL_ROOT_PASSWORD: "${DB_ROOT_PASSWORD}"
-#       MYSQL_DATABASE: "${DB_NAME}"
-#       MYSQL_USER: "${DB_USERNAME}"
-#       MYSQL_PASSWORD: "${DB_PASSWORD}"
-    ports:
-      - "${MYSQL_PORT}:3306"
-    # volumes:
-    #   - ./mysql-dump.sql:/dump.sql
-    #  - ./mysql/data/:/var/lib/mysql
-    # networks:
-    #   - website
-    # volumes:
-    #   - ./data:/docker-entry-initdb.d
-    #   - mysqldb-data:/var/lib/mysql
-    #   - './mysql/my.cnf:/etc/mysql/my.cnf'
+    mariadb:
+        image: mariadb:10.5.2
+        environment:
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "password"
+            MYSQL_USER: 'testuser'
+            MYSQL_PASSWORD: 'testpassword'
+            MYSQL_DATABASE: 'experiments'
+            TZ: "Europe/Dublin"
+        ports:
+          - "3306:3306"
+        volumes:
+          - web-data:/var/lib/mysql
 
+    web:
+      image: php:7.3-apache
+      container_name: apache
+      ports:
+          - 80:80
+      volumes:
+          - "./web:/var/www/html"
 
-
-networks:
-  website:
-    driver: bridge
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      # environment:
+      #   PMA_HOST: mysql-server
+      #   PMA_USER: root
+      #   PMA_PASSWORD: secret
+      links:
+          - 'mariadb:db'
+      ports:
+          - 8081:80
 
 volumes:
-  website-data:
-    driver: local
+  web-data:
 
-#   php:
-#     build:
-#       context: './php/'
-#       args:
-#        PHP_VERSION: ${PHP_VERSION}
-#     networks:
-#       - backend
-#     volumes:
-#       - ${PROJECT_ROOT}:/var/www/html/
+
+
+  # mysql:
+  #   image: mysql
+  #   # container_name: mysql
+  #   # restart: always
+  #   # command: --default-authentication-plugin=mysql_native_password
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_DATABASE: experiments
+  #     MYSQL_ROOT_HOST: "0.0.0.0"
+  #     # MYSQL_ROOT_HOST: 172.17.0.1
+  #     #  MYSQL_USER: 'user'
+  #     #  MYSQL_PASSWORD: 'pass'
+  #   ports:
+  #     - 3306:3306
+  #   # volumes:
+  #   #   - ./mysql-dump.sql:/dump.sql
+  #   networks:
+  #     - experiments
+  #   # volumes:
+  #   #   - ./data:/docker-entry-initdb.d
+  #   #   - mysqldb-data:/var/lib/mysql
+  #   #   - './mysql/my.cnf:/etc/mysql/my.cnf'
+
+# networks:
+#   experiments:
+#     driver: bridge
+
+# volumes:
+#   mysql-data:
+#     driver: local
+
+
+# services:
+
+#   mysql:
+#     image: mysql
+#     container_name: mysql
+#     # restart: always
+#     # command: --default-authentication-plugin=mysql_native_password
+# #     command:
+# #       - mysqld
 #     environment:
-#       MYSQL_HOST: "${DB_HOST}"
-#       MYSQL_DATABASE: "${DB_NAME}"
-#       MYSQL_USER: "${DB_USERNAME}"
-#       MYSQL_PASSWORD: "${DB_PASSWORD}"
-#       INSTANCE_NAME: "${INSTANCE_NAME}"
-#       PROJECT_COLOR: "${PROJECT_COLOR}"
-#     container_name: ${DOCKER_IMAGE_PREFIX}php
-#     restart: always
+#       MYSQL_ROOT_PASSWORD: password
+#       MYSQL_DATABASE: experiments
+#       MYSQL_ROOT_HOST: "0.0.0.0"
+#       # MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}"
+#       # MYSQL_DATABASE: experiments  #"${MYSQL_DATABASE}"
+#       # MYSQL_ROOT_HOST: "0.0.0.0"
+#       # MYSQL_USER: "${MYSQL_USER}"
+#       # MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+# #       TZ: "${TZ}"
 
-#   apache:
-#     build:
-#       context: './apache/'
-#       args:
-#         APACHE_VERSION: ${APACHE_VERSION}
-#     depends_on:
-#       - php
-#     networks:
-#       - frontend
-#       - backend
 #     ports:
-#       - "${EXTERNAL_APACHE_PORT}:80"
-#     volumes:
-#       - ${PROJECT_ROOT}:/var/www/html/
-#     container_name: ${DOCKER_IMAGE_PREFIX}apache
-#     restart: always
+#       - "${MYSQL_PORT}:3306"
+#     # volumes:
+#     #   - ./mysql-dump.sql:/dump.sql
+#     #  - ./mysql/data/:/var/lib/mysql
+#     # networks:
+#     #   - website
+#     # volumes:
+#     #   - ./data:/docker-entry-initdb.d
+#     #   - mysqldb-data:/var/lib/mysql
+#     #   - './mysql/my.cnf:/etc/mysql/my.cnf'
+
 
 
 # networks:
-#   frontend:
-#     name: ${DOCKER_IMAGE_PREFIX}frontend
-#   backend:
-#     name: ${DOCKER_IMAGE_PREFIX}backend
+#   website:
+#     driver: bridge
+
 # volumes:
-#     data:
+#   website-data:
+#     driver: local
+
+# #   php:
+# #     build:
+# #       context: './php/'
+# #       args:
+# #        PHP_VERSION: ${PHP_VERSION}
+# #     networks:
+# #       - backend
+# #     volumes:
+# #       - ${PROJECT_ROOT}:/var/www/html/
+# #     environment:
+# #       MYSQL_HOST: "${DB_HOST}"
+# #       MYSQL_DATABASE: "${DB_NAME}"
+# #       MYSQL_USER: "${DB_USERNAME}"
+# #       MYSQL_PASSWORD: "${DB_PASSWORD}"
+# #       INSTANCE_NAME: "${INSTANCE_NAME}"
+# #       PROJECT_COLOR: "${PROJECT_COLOR}"
+# #     container_name: ${DOCKER_IMAGE_PREFIX}php
+# #     restart: always
+
+# #   apache:
+# #     build:
+# #       context: './apache/'
+# #       args:
+# #         APACHE_VERSION: ${APACHE_VERSION}
+# #     depends_on:
+# #       - php
+# #     networks:
+# #       - frontend
+# #       - backend
+# #     ports:
+# #       - "${EXTERNAL_APACHE_PORT}:80"
+# #     volumes:
+# #       - ${PROJECT_ROOT}:/var/www/html/
+# #     container_name: ${DOCKER_IMAGE_PREFIX}apache
+# #     restart: always
+
+
+# # networks:
+# #   frontend:
+# #     name: ${DOCKER_IMAGE_PREFIX}frontend
+# #   backend:
+# #     name: ${DOCKER_IMAGE_PREFIX}backend
+# # volumes:
+# #     data:
