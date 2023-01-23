@@ -1,82 +1,118 @@
 package com.adrynov;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Map;
 
-public class ListChallenge {
-    private final List commonWords = List.of("the", "a", "or", "an", "it", "and",
+public class StringProcessing {
+    private static final List commonWords = List.of("the", "a", "or", "an", "it", "and",
             "but", "is", "are", "of", "on", "to", "was", "were", "in",
             "that", "i", "your", "his", "their", "her", "you", "me",
             "they", "at", "be");
 
 
-    public String findMostRepeatedWord(String text) {
-        String word = "";
+    public static String findMostRepeatedWord(String text) {
+        String result = "";
 
-        var allWords = text.toLowerCase().trim().split("[ \\n\\t\\r.,;:!?(){]");
+        var words = text.toLowerCase().trim().split("[ \\n\\t\\r.,;:!?(){]");
+
+        // create a map of words and their count
+        Map<String, Integer> wordCount = new HashMap<>();
+
+        Arrays.stream(words)
+                .filter(w -> !w.isBlank() && !commonWords.contains(w))
+                .forEach(w -> wordCount.merge(w, 1, Integer::sum));
+
+        int maxCount = 0;
+
+        for (var entries : wordCount.entrySet()) {
+            if (entries.getValue() >= maxCount) {
+                result = entries.getKey();
+                maxCount = entries.getValue();
+            }
+        }
 
 
-        Arrays.stream(allWords).filter(w -> w.isBlank() || commonWords.contains(w))
-                .collect(Collectors.toList())
+        return result;
+    }
+
+    /**
+     * Checks if a certain character exists at an even index in the specified string.
+     *
+     * @param input Input string
+     * @param item  A character
+     * @return True if the item's index is even
+     */
+    public static boolean isAtEventIndex(String input, char item) {
+        if (input == null || input.isBlank()) return false;
+
+        for (int i = 0; i < input.length() / 2 + 1; i += 2) {
+            if (input.charAt(i) == item) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Checks whether a string contains at least one of the lowercase, uppercase letter and digits.
+     *
+     * @param value Input string
+     * @return True of the input is simple password
+     */
+    public static boolean isPasswordComplex(String value) {
+        return value.chars().anyMatch(Character::isLowerCase) &&
+                value.chars().anyMatch(Character::isUpperCase) &&
+                value.chars().anyMatch(Character::isDigit);
+    }
+
+    /**
+     * Checks whether a string has all uppercase letters.
+     *
+     * @param value Input string
+     * @return True if all letters are uppercase
+     */
+    public static boolean isUppercase(String value) {
+        return value.chars().filter(Character::isAlphabetic).allMatch(Character::isUpperCase);
+    }
+
+    public static boolean isLowercase(String value) {
+        return value.chars().allMatch(Character::isLowerCase);
+    }
+
+    /**
+     * Checks whether this string contains the specified sequence of char values.
+     *
+     * @param input Input string
+     * @param sub   the sequence to search for
+     * @return true if this string contains s, false otherwise
+     */
+    public static boolean containsString(String input, String sub) {
 
 
-        return word;
+        return true;
+    }
+
+    /**
+     * Reverse a string.
+     *
+     * @param input Input string
+     * @return Reversed string
+     */
+    public static String reverse(String input) {
+        if (input == null || input.isEmpty()) return input;
+
+        StringBuffer reversed = new StringBuffer();
+//        return reversed.append(input)reverse().toString();
+
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed.append(input.charAt(i));
+        }
+
+        return reversed.toString();
     }
 
 }
 
-
-//    List<String> uncommonWords =  convertToUncommonWords(input);
-//
-//        if (uncommonWords.size() == 0) {
-//                System.out.println("No unique words in input");
-//                return "";
-//                }
-//
-//                HashMap<String, Integer> wordCountMap = new HashMap();
-//        for (String word : uncommonWords) {
-//        if (wordCountMap.containsKey(word)) {
-//        wordCountMap.put(word, wordCountMap.get(word) + 1);
-//        } else {
-//        wordCountMap.put(word, 1);
-//        }
-//        }
-//
-//        int max = 0;
-//        String mostRepeatedWord = "";
-//        for (String key : wordCountMap.keySet()) {
-//        int currentValue = wordCountMap.get(key);
-//        if (currentValue > max) {
-//        mostRepeatedWord = key;
-//        max = currentValue;
-//        }
-//        }
-//
-//        System.out.println("Most repeated word: " + mostRepeatedWord +
-//        "\nRepeated: " + max + " times");
-//        return mostRepeatedWord;
-//        }
-//
-//public static List<String> convertToUncommonWords(String input) {
-
-
-//        return Arrays.stream(words)
-//        .filter(word ->
-//        !commonWords.contains(word) && word.length() != 0)
-//        .collect(Collectors.toList());
-//        }
-//
-//public static void main(String[] args) {
-//
-//        String testString = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-//        findMostRepeatedWord(testString);
-//
-//        System.out.println();
-//        String testString2 = "Penguins are aquatic, flightless birds that are highly adapted to life in the water. Their distinct tuxedo-like appearance is called countershading, a form of camouflage that helps keep them safe in the water. Penguins do have wing-bones, though they are flipper-like and extremely suited to swimming. Penguins are found almost exclusively in the southern hemisphere, where they catch their food underwater and raise their young on land.";
-//        findMostRepeatedWord(testString2);
-//
-//        System.out.println();
-//        String testString3 = "Students seek relief from rising prices through the purchase of used copies of textbooks, which tend to be less expensive. Most college bookstores offer used copies of textbooks at lower prices. Most bookstores will also buy used copies back from students at the end of a term if the book is going to be re-used at the school. Books that are not being re-used at the school are often purchased by an off-campus wholesaler for 0-30% of the new cost, for distribution to other bookstores where the books will be sold. Textbook companies have countered this by encouraging faculty to assign homework that must be done on the publisher's website. If a student has a new textbook, then he or she can use the pass code in the book to register on the site. If the student has purchased a used textbook, then he or she must pay money directly to the publisher in order to access the website and complete assigned homework. ";
-//        findMostRepeatedWord(testString3);
-//        }

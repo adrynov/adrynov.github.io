@@ -1,2 +1,8 @@
-package com.adrynov.model;public class CardSuite {
+package com.adrynov.model;
+
+public enum CardSuite {
+    SPADES,
+    HEARTS,
+    DIAMONDS,
+    CLUBS;
 }

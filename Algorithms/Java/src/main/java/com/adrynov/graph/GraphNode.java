@@ -1,2 +1,4 @@
-package com.adrynov.graph;public class GraphNode {
+package com.adrynov.graph;
+
+public record GraphNode<T>(T value) {
 }

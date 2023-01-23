@@ -1,3 +1,5 @@
+package com.adrynov;
+
 import com.adrynov.Basic;
 import org.junit.jupiter.api.Test;
 
