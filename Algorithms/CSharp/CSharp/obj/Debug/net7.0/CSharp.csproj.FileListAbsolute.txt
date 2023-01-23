@@ -1,0 +1,15 @@
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\bin\Debug\net7.0\CSharp.exe
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\bin\Debug\net7.0\CSharp.deps.json
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\bin\Debug\net7.0\CSharp.runtimeconfig.json
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\bin\Debug\net7.0\CSharp.dll
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\bin\Debug\net7.0\CSharp.pdb
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.csproj.AssemblyReference.cache
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.AssemblyInfoInputs.cache
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.AssemblyInfo.cs
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.csproj.CoreCompileInputs.cache
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.dll
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\refint\CSharp.dll
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.pdb
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\CSharp.genruntimeconfig.cache
+D:\Проекты\Портфолио\Algorithms\CSharp\CSharp\obj\Debug\net7.0\ref\CSharp.dll
