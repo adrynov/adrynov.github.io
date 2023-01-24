@@ -1,0 +1,17 @@
+{
+    "name": "@types/experiments",
+    "version": "0.0.1",
+    "description": "TypeScript definitions",
+    "main": "",
+    "types": "index.d.ts",
+    "scripts": {},
+    "dependencies": {
+        "pretty-format": "^27.0.0"
+    },
+    "exports": {
+        ".": {
+            "types": "./index.d.ts"
+        },
+        "./package.json": "./package.json"
+    }
+}
