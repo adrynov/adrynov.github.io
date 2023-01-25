@@ -25,6 +25,11 @@
             <artifactId>json</artifactId>
             <version>20190722</version>
         </dependency>
+        <dependency>
+            <groupId>net.aksingh</groupId>
+            <artifactId>owm-japis</artifactId>
+            <version>2.5.3.0</version>
+        </dependency>
     </dependencies>
 
 </project>

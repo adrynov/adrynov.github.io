@@ -17,13 +17,21 @@ import java.net.UnknownHostException;
 public class Runner {
 
     public static void main(String[] args) {
-        showMachineInfo();
+        showBanner();
+
+        try {
+            showMachineInfo();
+        } catch (Exception e) {
+            System.out.println("Please check your Internet connection. Unable to ping remote servers");
+            System.exit(1);
+            return;
+        }
 
         // we need the public IP address for the city and weather lookup
-        String ipAddress = determinePublicAddress();
+        String ipAddress = AddressFinder.getPublicAddress();
 
         if (ipAddress == null || ipAddress.isBlank()) {
-            System.out.println("Unable to get your public IP address. Verify your Internet connectivity.");
+            System.out.println("Please check your Internet connection. Unable to get your public IP address.");
             System.exit(1);
             return;
         }
@@ -39,33 +47,28 @@ public class Runner {
 
         System.out.println("Public IP:" + ipAddress);
 
-
         // show city and country detail
-        System.out.println("Your country: " + location.getCountry());
-        System.out.println("Your city: " + location.getCity());
+        System.out.println("Country code: " + location.getCountry());
+        System.out.println("Found city: " + location.getCity());
 
         // create a city link to Google Maps
         String mapLink = "https://www.google.com/maps/?q=" + location.getCity();
-        System.out.println("Approximate location on the map: " + mapLink);
-    }
+        System.out.println("Map location: " + mapLink);
 
-    /**
-     * Determines the public IP address of the client machine.
-     *
-     * @return IP address
-     */
-    private static String determinePublicAddress() {
-        String publicAddress = "";
+        printSeparator('-');
+        System.out.println("Checking current weather conditions...");
+        System.out.println();
 
-        try {
-            publicAddress = NetworkingUtils.getPublicAddress().trim();
+        // check current weather in the city
+        var forecast = new WeatherForecast();
+        forecast.getCurrentWeather(location);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            return null;
-        }
+        printSeparator('-');
+        System.out.println("Checking hourly weather forecast...");
+        System.out.println();
 
-        return publicAddress;
+        // get hourly weather forecasts (only 4 for brevity)
+        forecast.getHourlyForecast(location.getCity(), 4);
     }
 
     /**
@@ -79,12 +82,12 @@ public class Runner {
 
         try {
             // fetch location detail by querying https://ipinfo.io
-            info = GeoUtils.getLocationInfo(address);
+            info = LocationParser.getLocationInfo(address);
 
             // request to IPInfo failed, try another way
             if (info == null) {
                 // send the IP address to GeoLite in order to get the city and country
-                info = GeoUtils.getInstance().queryLocationByAddress(address);
+                info = LocationParser.getInstance().queryLocationByAddress(address);
             }
 
             // we still could not look up IP address data
@@ -101,17 +104,46 @@ public class Runner {
         return info;
     }
 
+    /**
+     * Prints some statistics.
+     */
     private static void showMachineInfo() {
         try {
+            // local IP address
+            System.out.println("Local IP: " + AddressFinder.getLocalIpAddress());
+
             // machine name
             InetAddress localAddress = InetAddress.getLocalHost();
             System.out.println("Hostname: " + localAddress.getHostName());
-
-            // local IP address
-            System.out.println("LAN IP: " + NetworkingUtils.getLocalIpAddress());
 
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
     }
+
+    //<editor-fold desc="Helpers">
+
+    private static void showBanner() {
+        printSeparator('*');
+        System.out.println("*   ATU - Dept. Computer Science & Applied Physics    *");
+        System.out.println("*                                                     *");
+        System.out.println("*            Network Programming Project              *");
+        System.out.println("*                                                     *");
+        System.out.println("*             Andrei Drynov (G00411287)               *");
+        printSeparator('*');
+
+        System.out.println();
+    }
+
+    /**
+     * The length of the separator line in informational blocks.
+     */
+    private static final int SEPARATOR_LEN = 55;
+
+    private static void printSeparator(char separator) {
+        String line = String.valueOf(separator).repeat(SEPARATOR_LEN);
+        System.out.println(line);
+    }
+
+    //</editor-fold>
 }

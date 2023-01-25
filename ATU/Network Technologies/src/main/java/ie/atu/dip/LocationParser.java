@@ -13,14 +13,15 @@ import java.net.URL;
 import java.net.URLConnection;
 
 /**
- * Determines the user location by parsing their IP address.
+ * Determines the user location info by parsing their IP address.
+ * The address can be found by querying specific public servers.
  * <p>
- * Using GeoLite API (free tier) and the GeoIP2 client library:
- * https://dev.maxmind.com/geoip/geolite2-free-geolocation-data
+ * Using GeoLite API (free tier) and the
+ * <a href="https://dev.maxmind.com/geoip/geolite2-free-geolocation-data">GeoIP2 client library</a>
  *
  * @author Andrei Drynov
  */
-public class GeoUtils {
+public class LocationParser {
 
     /**
      * GeoLite account ID.
@@ -34,6 +35,7 @@ public class GeoUtils {
      * but I left it exposed in this project for the easier portfolio review by ATU.
      */
     private final static String GEOIP_API_KEY = "qaQLGDGUYZeJ5yyd";
+
 
     // https://www.maxmind.com/en/accounts/817943/people/ced80fb3-3b13-491d-8768-291fbb152953
 //    Account ID:
@@ -67,12 +69,11 @@ public class GeoUtils {
         }
     }
 
-
     /**
      * Gets location information by querying <a href="https://ipinfo.io">IP Info</a>
      *
      * @param address IP address
-     * @return {@link UserLocation} User's location
+     * @return {@link LocationInfo} User's location
      */
     public static LocationInfo getLocationInfo(String address) throws IOException {
         StringBuilder response = new StringBuilder();
@@ -95,21 +96,20 @@ public class GeoUtils {
     //<editor-fold desc="Singleton">
 
     // Lazy initialization
-    private static final GeoUtils INSTANCE = new GeoUtils();
+    private static final LocationParser INSTANCE = new LocationParser();
 
     /**
      * Returns the instance using Singleton pattern.
      *
      * @return Singleton of this class
      */
-    public static GeoUtils getInstance() {
+    public static LocationParser getInstance() {
         return INSTANCE;
     }
 
-    private GeoUtils() {
+    private LocationParser() {
 
     }
 
     //</editor-fold>
-
 }

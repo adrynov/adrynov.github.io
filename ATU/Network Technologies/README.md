@@ -1,27 +1,80 @@
 # Network Technologies
 
-This project showcases my academic qualifications in Network Application Development in Java.
+This project demonstrates my academic skills in developing network applications with Java.
 
-The application fetches a weather forecast using IP geolocation services.
+The application retrieves the weather forecast for the user using IP geolocation services.
 
-First we acquire the user's IPv4 address by querying public servers.
+First, we obtain the user's IPv4 address by querying public servers.
+
 In an ideal situation, the IP address will pinpoint to the city where the user is located.
+The IP lookup is not 100% accurate because the user may be behind a proxy server, their ISP
+may not be providing the real address, or is connected via VPN.
+However, it is good enough for the demo.
 
-The IP lookup is not always exact since the user might be behind a proxy server, their ISP
-does not provide the real address, or they connected via VPN.
+Next we use the IP address to find the location information such as country/city/coordinates using either
 
-Next we find the user location such as country/city/coordinates using the public IP address
-and [GeoLite2 databases](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data).
+- [IPInfo](https://ipinfo.io/)
+- [GeoLite2 databases](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data), a free offering by MaxMind.
 
-GeoIP2 is a free offering by MaxMind and as such the IP Geolocation is imprecise.
-It is still good enough for our requirements.
+Here is a sample output:
+
+<pre>
+*******************************************************
+*   ATU - Dept. Computer Science & Applied Physics    *
+*                                                     *
+*            Network Programming Project              *
+*                                                     *
+*             Andrei Drynov (G00411287)               *
+*******************************************************
+
+Checking your local IP address
+Local IP: 10.5.0.2
+Hostname: HP
+
+Finding your public IP address...
+Public IP:194.156.227.75
+Country code: IE
+Found city: Dublin
+Map location: https://www.google.com/maps/?q=Dublin
+-------------------------------------------------------
+Checking current weather conditions...
+
+Current temperature: 6.67°C
+Min/Max temperature: 3.53/6.67°C
+Pressure: 1035.0 hPa
+Humidity: 85.0 %
+-------------------------------------------------------
+
+Checking hourly weather forecast...
+
+2023-01-26 00:00:00
+Current temperature: 16.08°C
+Min/Max temperature: 14.35/16.08°C
+Pressure: 1027.0 hPa
+Humidity: 50.0 %
+Wind speed: 1.94 meter/sec
+Wind degree: 38.0  (meteorological)
+Wind gust: 4.37 meter/sec
+
+</pre>
 
 ## Requirements
 
-Get geographic location data from an IP address using the .
+- JDK 11 or above
+- Maven
 
-Geolocation is vital in this application.
+This project was created using [IntelliJ IDEA](https://www.jetbrains.com/idea/) and the project can be
+easily opened using the included **pom.xml**
 
-Use the Accuracy Radius as an indication of geolocation accuracy for the latitude and longitude coordinates we return
-for an IP address. The actual location of the IP address is likely within the area defined by this radius and the
-latitude and longitude coordinates.
+Executre the main() method in th **Runner.java** class
+
+## Credits
+
+- [JSON Processing](https://www.oracle.com/technical-resources/articles/java/json.html)
+- [Free Weather Data](https://openweathermap.org/)
+- [Java APIs for OpenWeatherMap](https://github.com/iamashks/OWM-JAPIs) - develop weather-aware applications much easier
+
+## Licensing
+
+This project is licensed under Unlicense license. This license does not require you to take the license with you to your
+project.

@@ -17,8 +17,7 @@ import org.json.JSONObject;
  * "loc": "51.8980,-8.4706",
  * "org": "AS6830 Liberty Global B.V.",
  * "postal": "T23",
- * "timezone": "Europe/Dublin",
- * "readme": "https://ipinfo.io/missingauth"
+ * "timezone": "Europe/Dublin"
  * }</pre>
  */
 public class LocationInfo {
@@ -33,17 +32,13 @@ public class LocationInfo {
     private String timezone;
     private String readme;
 
+    /**
+     * Geographical coordinates (latitude, longitude)
+     * Required by OpenWeather API.
+     */
     private String loc;
 
     public LocationInfo(String ip) {
-        this.ip = ip;
-    }
-
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIpAddress(String ip) {
         this.ip = ip;
     }
 
@@ -55,14 +50,6 @@ public class LocationInfo {
         this.city = city;
     }
 
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
-    }
-
     public String getCountry() {
         return country;
     }
@@ -71,44 +58,16 @@ public class LocationInfo {
         this.country = country;
     }
 
-    public String getLoc() {
-        return loc;
-    }
-
     public void setCoords(String loc) {
         this.loc = loc;
-    }
-
-    public String getOrg() {
-        return org;
-    }
-
-    public void setOrg(String org) {
-        this.org = org;
-    }
-
-    public String getPostal() {
-        return postal;
-    }
-
-    public void setPostal(String postal) {
-        this.postal = postal;
-    }
-
-    public String getTimezone() {
-        return timezone;
     }
 
     public void setTimezone(String timezone) {
         this.timezone = timezone;
     }
 
-    public String getReadme() {
-        return readme;
-    }
-
-    public void setReadme(String readme) {
-        this.readme = readme;
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public static LocationInfo fromString(String input) {
@@ -122,12 +81,14 @@ public class LocationInfo {
             String country = json.getString("country");
             String timezone = json.getString("timezone");
             String coordinates = json.getString("loc");
+            String region = json.getString("region");
 
             LocationInfo info = new LocationInfo(ipAddress);
             info.setCity(city);
             info.setCountry(country);
             info.setCoords(coordinates);
             info.setTimezone(timezone);
+            info.setRegion(region);
 
             return info;
 

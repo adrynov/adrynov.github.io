@@ -6,11 +6,11 @@ import java.io.InputStreamReader;
 import java.net.*;
 
 /**
- * Locates the user by different means.
+ * Determines local and public IP addresses of the client machine.
  *
  * @author Andrei Drynov
  */
-public class NetworkingUtils {
+public class AddressFinder {
 
     /**
      * Public servers that return your public IP address.
@@ -32,15 +32,23 @@ public class NetworkingUtils {
      *
      * @return Public IPv4 address reachable from the internet.
      */
-    public static String getPublicAddress() throws IOException {
-        // ping the servers until one of them responds with an IP address
-        for (String server : externalServers) {
-            URL serverURL = new URL(server);
+    public static String getPublicAddress() {
+        System.out.println("\nFinding your public IP address...");
+        try {
+            // ping the servers until one of them responds with an IP address
+            for (String server : externalServers) {
+                URL serverURL = new URL(server);
 
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(serverURL.openStream()))) {
-                // the IP address returned as a raw text string
-                return reader.readLine();
+                try (BufferedReader reader = new BufferedReader(new InputStreamReader(serverURL.openStream()))) {
+                    // the IP address returned as a raw text string
+                    return reader.readLine();
+                }
             }
+        } catch (MalformedURLException e) {
+            // can safely ignore this exception
+        } catch (IOException e) {
+            System.out.println("Network error. " + e.getMessage());
+            return "";
         }
 
         // it is likely the machine is not connected to the Internet
@@ -57,6 +65,8 @@ public class NetworkingUtils {
      * @return Chat server address
      */
     public static String getLocalIpAddress() {
+        System.out.println("Checking your local IP address");
+
         try (final DatagramSocket socket = new DatagramSocket()) {
             // ping Google
             socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
