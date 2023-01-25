@@ -1,10 +1,12 @@
+# GIS containers
+
+Geospatial databases are very useful.
+
 Ready to run PostGIS geospatial database: https://hub.docker.com/r/kartoza/postgis/
 
 [Set Up PostGIS Database With Docker](https://alexurquhart.com/post/set-up-postgis-with-docker/)
 
-[Создание и наполнение PostGIS при использовании Docker](https://habr.com/ru/post/678420/)
-
-## OpenStreeMaps
+## OpenStreetMaps
 
 https://www.geofabrik.de/
 

@@ -22,4 +22,3 @@ adding:
 
 `0 0 * * * pg_dump "host=localhost port=5432 dbname=blog user=postgres password=postgres" > //home/andrei/Архив/Blog/database.sql`
 
-## PostGIS
