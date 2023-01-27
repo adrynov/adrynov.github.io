@@ -1,7 +1,5 @@
 package ie.atu.dip;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,47 +12,64 @@ import java.util.Scanner;
  * @version 1.1
  */
 public class Runner {
-    private static final List<ParkingTicket> tickets = new ArrayList<>();
-
     private static final Scanner scanner = new Scanner(System.in);
-    //        ParkingSpot parkingspot = new ParkingSpot();
-//        RandomInfo randominfo = new RandomInfo();
-
 
     public static void main(String[] args) {
         showBanner();
 
         var parking = new ParkingLot();
 
-        System.out.println("Let's park your car");
+        System.out.println("Let's park a car");
         System.out.println();
 
         boolean done = false;
 
         while (!done) {
-            var ticket = new ParkingTicket();
-
             try {
+                // check available spaces
                 int availableSpaces = parking.getAvailableSpaces();
-                System.out.println("Total number of car spaces: " + availableSpaces);
+                System.out.println("Total number of available spaces: " + availableSpaces);
+                System.out.println();
 
+                // no spaces left
                 if (availableSpaces <= 0) {
                     System.out.println("There is no parking space left.");
                     done = true;
                     continue;
                 }
 
-                System.out.print("What is the car plate: ");
+                // request the user to enter any car plate number
+                System.out.print("What is the car plate? ");
                 String plateNumber = scanner.nextLine();
 
+                // if the same
+                if (parking.isCarParked(plateNumber)) {
+                    System.out.println("Car " + plateNumber + " is already parked");
+                    continue;
+                }
+
+                // get the next parking spot
+                int spotNumber = parking.getNextAvailableSpace();
+                if (spotNumber == 0) {
+                    System.out.println("Sorry, no parking space left");
+                    done = true;
+                    continue;
+                }
+
+                // create a random car
                 var car = Car.randomCar(plateNumber);
+
+                // create a parking ticket
+                var ticket = new ParkingTicket();
                 ticket.setCar(car);
+                ticket.setSpot(spotNumber);
+
+                parking.openTicket(ticket);
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
-
     }
 
     //<editor-fold desc="Helpers">

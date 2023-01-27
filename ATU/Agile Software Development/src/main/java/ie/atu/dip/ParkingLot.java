@@ -1,5 +1,8 @@
 package ie.atu.dip;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Represents a parking lot.
  */
@@ -8,9 +11,29 @@ public class ParkingLot {
     /**
      * Parking spots
      */
-    int[] spots = new int[10];
+    private int[] spots = new int[10];
 
-    public int SpotNum() {
+    /**
+     * Parking tickets
+     */
+    private final List<ParkingTicket> tickets = new ArrayList<>();
+
+    /**
+     * Gets the number of available parking spaces.
+     *
+     * @return Total number of available spaces for parking.
+     */
+    public int getAvailableSpaces() {
+        int scaces = 0;
+        for (int i = 0; i < 10; i++) {
+            if (spots[i] == 0) {
+                scaces++;
+            }
+        }
+        return scaces;
+    }
+
+    public int getNextAvailableSpace() {
         int spot = 0;
         for (int i = 0; i < 10; i++) {
             if (spots[i] == 0) {
@@ -23,20 +46,12 @@ public class ParkingLot {
     }
 
     /**
-     * Gets the number of available parking spaces.
+     * Checks whether the parking spot is available
      *
-     * @return Total number of available spaces for parking.
+     * @param spot Spot number
      */
-    public int getAvailableSpaces() {
-        int scaces = 0;
-        for (int i = 0; i < 10; i++) {
-            if (spots[i] != 0) {
-                return 1;
-            } else if (spots[i] == 0) {
-                scaces++;
-            }
-        }
-        return scaces;
+    public boolean isFree(int spot) {
+        return spots[spot - 1] == 0;
     }
 
     public void sipe() {
@@ -47,7 +62,40 @@ public class ParkingLot {
         System.out.println();
     }
 
-    public void FreeSpot(int num) {
-        spots[num - 1] = 0;
+    /**
+     * Check that the car is already parked
+     *
+     * @param plate Car plate number
+     * @return True if the car is parked already
+     */
+    public boolean isCarParked(String plate) {
+        String plateNumber = plate.trim().toLowerCase();
+
+        for (int i = 0; i < tickets.size(); i++) {
+            if (plateNumber.equals(tickets.get(i).getPlate().toLowerCase())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void openTicket(ParkingTicket ticket) {
+        this.tickets.add(ticket);
+    }
+
+    public void closeTicket(ParkingTicket ticket) {
+
+    }
+
+    public void showTickets() {
+        for (ParkingTicket ticket : tickets) {
+            System.out.println("Car number: " + ticket.getPlate());
+            System.out.println("Car color: " + ticket.getCar().getColor());
+            System.out.println("Car type: " + ticket.getCar().getType());
+
+            System.out.println("Parking spot: " + ticket.getSpot());
+            System.out.println("Parking Time: " + ticket.getEnterTime());
+        }
     }
 }

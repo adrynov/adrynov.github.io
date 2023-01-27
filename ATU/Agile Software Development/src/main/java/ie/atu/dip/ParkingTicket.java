@@ -1,63 +1,67 @@
 package ie.atu.dip;
 
-public class ParkingTicket {
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
-    //public String ParkingTime;
-    public String enterDate;
-    public String enterTime;
-    private long cardNumber;
-    public String CardType;
-    public int SpotNumber;
+/**
+ * Parking ticket.
+ */
+public class ParkingTicket implements Comparable<ParkingTicket> {
 
-    public Car car;
+    /**
+     * Date and time of vehicle entry
+     */
+    private LocalDateTime enterTime;
 
-    public Car getAssignedCar() {
+    /**
+     * Date and time of vehicle exit
+     */
+    private LocalDateTime exitTime;
+
+    /**
+     * The spot number on the parking.
+     */
+    private int spot;
+
+    /**
+     * Car details
+     */
+    private Car car;
+
+    public ParkingTicket() {
+        this.enterTime = LocalDateTime.now();
+    }
+
+    public Car getCar() {
         return car;
+    }
+
+    public String getPlate() {
+        return car.getPlate();
     }
 
     public void setCar(Car car) {
         this.car = car;
     }
 
-    public String getDate() {
-        return enterDate;
+    public int getSpot() {
+        return spot;
     }
 
-    public void setDate(String enterDate) {
-        this.enterDate = enterDate;
+    public void setSpot(int spot) {
+        this.spot = spot;
     }
 
-    public String getTime() {
-        return enterTime;
+    public String getEnterTime() {
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("HH:mm:ss");
+        return enterTime.format(df);
     }
 
-    public void setTime(String enterTime) {
-        this.enterTime = enterTime;
+    /**
+     * Two parking tickets are equal for the same car plate number.
+     */
+    @Override
+    public int compareTo(ParkingTicket other) {
+        return this.getCar().getPlate().compareTo(other.car.getPlate());
     }
-
-    private long getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(long CardNumber) {
-        this.cardNumber = CardNumber;
-    }
-
-    private String getCardType() {
-        return CardType;
-    }
-
-    public void setCardType(String CardType) {
-        this.CardType = CardType;
-    }
-
-
-    public int getSpotNumber() {
-        return SpotNumber;
-    }
-
-    public void setSpotNumber(int SpotNumber) {
-        this.SpotNumber = SpotNumber;
-    }
-
 }

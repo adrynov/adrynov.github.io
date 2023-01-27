@@ -6,9 +6,9 @@ import java.util.Random;
  * A car.
  */
 public class Car {
-    public String plate;
-    public String color; //red, yellow, green, etc..
-    public String type;
+    private String plate;
+    private String color; //red, yellow, green, etc..
+    private String type;
 
     public String getPlate() {
         return plate;
