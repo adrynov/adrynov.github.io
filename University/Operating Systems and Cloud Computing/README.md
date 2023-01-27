@@ -1,13 +1,41 @@
-Open an SSH client.
+# Operating Systems and Cloud Computing
 
-Locate your private key file. The key used to launch this instance is Web Server Key.pem
+This project is a demonstration of my academic skills in cloud computing.
 
-Run this command, if necessary, to ensure your key is not publicly viewable.
+I was immersed in the fundamentals of Operating Systems and Cloud Computing (with a specific focus on virtualisation as a fundamental enabling technology for the Cloud).
 
-chmod 400 Web Server Key.pem
+I set up a WordPress web site on AWS using LAMP server in the following way:
 
-Connect to your instance using its Public DNS: ec2-54-164-167-75.compute-1.amazonaws.com
+- created an EC2 instance on AWS
+- installed and configured Ubuntu Server 22.04
+- installed and configured LAMP server
+- installed and configured WordPress 6.1
+- obtained a free domain **andreidrynov.tk** using <a href="https://www.freenom.com/">Freenom</a> World.
+- created a static IP address using AWS Elastic IP address and redirected the domain
+- installed and configured Let's Encrypt certbot
+- created an SSL certificate and configured Apache HTTP server to use HTTPs
+- installed and configured <a href="https://matomo.org/">Matomo </a> server, a powerful web analytics platform
 
-Example:
+I developed a web site that describes the pros and cons of running Manjaro Linux locally using a nice development tool <a href="https://localwp.com/">Local</a>. 
 
-`ssh -i "Web Server Key.pem" ubuntu@ec2-54-164-167-75.compute-1.amazonaws.com`
+![website](website.png)
+
+ I made a backup of the site and restored it to the WordPress instance running on AWS.
+
+## Local Site
+
+- LAMP server
+- WordPress 6
+
+Restore the provided **AndreiDrynov.wordpress** web site backup using [All-in-Onw WP Migration](https://wordpress.org/plugins/all-in-one-wp-migration/) Wordpress plugin
+
+WordPress Admin Panel login:
+
+| Username | Password |
+|----------|----------|
+| admin    | password |
+
+## Licensing
+
+This project is licensed under Unlicense license. This license does not require you to take the license with you to your
+project.
