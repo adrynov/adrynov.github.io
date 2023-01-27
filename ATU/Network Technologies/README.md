@@ -66,7 +66,7 @@ Wind gust: 4.37 meter/sec
 This project was created using [IntelliJ IDEA](https://www.jetbrains.com/idea/) and the project can be
 easily opened using the included **pom.xml**
 
-Executre the main() method in th **Runner.java** class
+Execute the main() method in th **Runner.java** class
 
 ## Credits
 

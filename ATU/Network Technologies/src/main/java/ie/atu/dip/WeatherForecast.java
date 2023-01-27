@@ -16,7 +16,7 @@ import java.util.function.Function;
  */
 public class WeatherForecast {
 
-    // OpenWeatherMap API key was created specifically for ATU reviewer usage.
+    // OpenWeatherMap API key created for the ATU review.
     private final OWM owm = new OWM("b19bf3ef38b71369bee12511f5816570");
 
     WeatherForecast() {

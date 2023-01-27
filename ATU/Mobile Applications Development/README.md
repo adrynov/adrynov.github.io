@@ -6,7 +6,7 @@ My final project at the university was to create a list of players using Ionic 3
 
 This project mimics the [MacDonalds' Interface Concept](https://dribbble.com/shots/7049291-McDonald-s-Touch-Interface-Concept) using **React Native**.
 
-![Concept](McDonald.png "McDonald's")
+![Concept](mcdonalds.png "McDonald's")
 
 
 ## Indicative Knowledge

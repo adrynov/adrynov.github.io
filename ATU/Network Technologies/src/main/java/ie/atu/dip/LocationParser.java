@@ -32,7 +32,7 @@ public class LocationParser {
      * License key for MaxMind's GeoLite services.
      * <p>
      * Normally I would hide secrets such keys, credentials etc. in environment variables,
-     * but I left it exposed in this project for the easier portfolio review by ATU.
+     * but I left it exposed in this project for the ATU review.
      */
     private final static String GEOIP_API_KEY = "qaQLGDGUYZeJ5yyd";
 
