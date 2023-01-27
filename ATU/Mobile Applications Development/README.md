@@ -18,3 +18,13 @@ This project mimics the [MacDonalds' Interface Concept](https://dribbble.com/sho
 
 ## Requirements
 
+Setup the development environment to build and run React Native applications: http://reactnative.dev/docs/environment-setup
+
+To start the application, execute `yarn expo start`
+
+
+## 📝 Notes
+
+- Learn more about [Universal React](https://docs.expo.io/).
+- See what API and components are [available in the React runtimes](https://docs.expo.io/versions/latest/).
+- Find out more about developing apps and websites: [Guides](https://docs.expo.io/guides/).
