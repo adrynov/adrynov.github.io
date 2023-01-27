@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
  * Weather forecast is provided by OpenWeather API using the city.
  *
  * @author Andrei Drynov
- * @version 1.1
+ * @version 1.2
  */
 public class Runner {
 

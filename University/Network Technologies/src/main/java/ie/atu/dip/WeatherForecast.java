@@ -33,7 +33,6 @@ public class WeatherForecast {
         try {
             // there are several Dublin cities in the world, better provide the country
             OWM.Country country = switch (location.getCountry()) {
-                case "IE" -> OWM.Country.IRELAND;
                 case "GB" -> OWM.Country.UNITED_KINGDOM;
                 case "NO" -> OWM.Country.NORWAY;
                 case "SE" -> OWM.Country.SWEDEN;
