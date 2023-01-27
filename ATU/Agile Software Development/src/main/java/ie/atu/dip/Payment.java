@@ -1,14 +1,16 @@
 package ie.atu.dip;
 
+import java.time.LocalDateTime;
+
 /**
  * Payment for car parking.
  */
 public class Payment {
-    float HourAmount = 30;
-    float TotalAmountForHour = 0;
-    float TotalAmountForMinute = 0;
+    private static float HourAmount = 30;
+    private static float TotalAmountForHour = 0;
+    private static float TotalAmountForMinute = 0;
 
-    public float TotalAmount(int Hour, int Minute) {
+    public static float calculateAmount(int Hour, int Minute) {
         TotalAmountForHour = Hour * HourAmount;
         if (Minute < 60 && Minute >= 30) {
             TotalAmountForMinute = 20;
@@ -21,7 +23,12 @@ public class Payment {
         return (TotalAmountForHour + TotalAmountForMinute);
     }
 
-    public static int[] calculateTotalTime(String enterdate, String exitdate, String entertime, String exittime) {
+    public static int[] calculateTimeDifference(LocalDateTime entry, LocalDateTime exit) {
+        String enterdate = entry.toLocalDate().toString();
+        String entertime = entry.toLocalTime().toString();
+        String exitdate = exit.toLocalDate().toString();
+        String exittime = exit.toLocalTime().toString();
+
         int firstDay = Integer.parseInt(enterdate.substring(8, 10));
         int lastDay = Integer.parseInt(exitdate.substring(8, 10));
         int firstMonth = Integer.parseInt(enterdate.substring(5, 7), 10);

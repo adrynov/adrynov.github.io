@@ -54,12 +54,8 @@ public class ParkingLot {
         return spots[spot - 1] == 0;
     }
 
-    public void sipe() {
-        System.out.print("\nSpot status : ");
-        for (int i = 0; i < 10; i++) {
-            System.out.print(spots[i] + "  ");
-        }
-        System.out.println();
+    public void freeSpot(int spot) {
+        spots[spot - 1] = 0;
     }
 
     /**
@@ -84,18 +80,30 @@ public class ParkingLot {
         this.tickets.add(ticket);
     }
 
-    public void closeTicket(ParkingTicket ticket) {
+    /**
+     * The car has exited the parking lot.
+     *
+     * @param plateNumber Car registration
+     * @return Removed ticket
+     */
+    public ParkingTicket closeTicket(String plateNumber) {
+        ParkingTicket ticket = null;
 
-    }
+        for (int i = 0; i < tickets.size(); i++) {
+            if (plateNumber.equals(tickets.get(i).getPlate())) {
+                ticket = tickets.get(i);
+                ticket.setExitTime();
 
-    public void showTickets() {
-        for (ParkingTicket ticket : tickets) {
-            System.out.println("Car number: " + ticket.getPlate());
-            System.out.println("Car color: " + ticket.getCar().getColor());
-            System.out.println("Car type: " + ticket.getCar().getType());
+                // free the spot
+                this.freeSpot(i + 1);
 
-            System.out.println("Parking spot: " + ticket.getSpot());
-            System.out.println("Parking Time: " + ticket.getEnterTime());
+                // remove the ticket
+                this.tickets.remove(ticket);
+                return ticket;
+            }
         }
+
+        return ticket;
     }
+
 }

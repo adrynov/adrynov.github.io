@@ -42,9 +42,10 @@ public class Runner {
                 System.out.print("What is the car plate? ");
                 String plateNumber = scanner.nextLine();
 
-                // if the same
+                // assume the car has exited when the same plate number entered by the user
                 if (parking.isCarParked(plateNumber)) {
-                    System.out.println("Car " + plateNumber + " is already parked");
+                    ParkingTicket removed = parking.closeTicket(plateNumber);
+                    showRemovedTicket(removed);
                     continue;
                 }
 
@@ -70,6 +71,18 @@ public class Runner {
                 e.printStackTrace();
             }
         }
+    }
+
+    /**
+     * Shows details of the ticket
+     *
+     * @param ticket Removed ticket.
+     */
+    private static void showRemovedTicket(ParkingTicket ticket) {
+        if (ticket == null) return;
+
+        System.out.println("Car " + ticket.getPlate() + " has left");
+        ticket.print();
     }
 
     //<editor-fold desc="Helpers">

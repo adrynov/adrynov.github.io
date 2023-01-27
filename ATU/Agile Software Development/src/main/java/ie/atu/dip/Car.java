@@ -10,11 +10,11 @@ public class Car {
     private String color; //red, yellow, green, etc..
     private String type;
 
-    public String getPlate() {
+    public String getPlateNumber() {
         return plate;
     }
 
-    public void setPlate(String NumberPlate) {
+    public void setPlateNumber(String NumberPlate) {
         this.plate = NumberPlate;
     }
 
@@ -43,7 +43,7 @@ public class Car {
         String type = CAR_TYPE[random.nextInt(CAR_TYPE.length)];
 
         car.setColor(color);
-        car.setPlate(plate);
+        car.setPlateNumber(plate);
         car.setType(type);
 
         return car;
