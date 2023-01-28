@@ -1,16 +1,18 @@
 /**
- * Node of a Binary Tree.
+ * A Binary Tree node.
+ * 
+ * Nodes contain data and also links to the sibling nodes
  */
-export class Node {
+export class TreeNode {
   /**
    * Left child.
    */
-  left?: Node | null;
+  left?: TreeNode | null;
 
   /**
    * Right child.
    */
-  right?: Node | null;
+  right?: TreeNode | null;
 
   constructor(public value: number) {
     this.left = null;
@@ -22,7 +24,7 @@ export class Node {
    *
    * @param value Value of the node to add.
    */
-  addNode(node: Node) {
+  addNode(node: TreeNode) {
     // add to left branch
     if (node.value < this.value) {
       if (this.left === null) {
@@ -62,7 +64,7 @@ export class Node {
     return false;
   }
 
-  removeNode(value: number): Node | null {
+  removeNode(value: number): TreeNode | null {
     // find the value in the right branch
     if (value > this.value) {
       this.right = this.right && this.right.removeNode(value);
@@ -81,26 +83,6 @@ export class Node {
     }
 
     return this;
-    //     if (val === this.value) {
-    //       if (!this.left && !this.right) {
-    //         return null
-    //       } else {
-    //         if (this.left) {
-    //           const leftMax = maxVal(this.left)
-    //           this.value = leftMax
-    //           this.left = this.left.removeNode(leftMax)
-    //         } else {
-    //           const rightMin = minVal(this.right)
-    //           this.value = rightMin
-    //           this.right = this.right.removeNode(rightMin)
-    //         }
-    //       }
-    //     } else if (val < this.value) {
-    //       this.left = this.left && this.left.removeNode(val)
-    //     } else if (val > this.value) {
-    //       this.right = this.right && this.right.removeNode(val)
-    //     }
-    //     return this
   }
 
   /**
@@ -114,13 +96,15 @@ export class Node {
 }
 
 /**
- * Binary Search Tree (BST) is a data structure where each node has a maxium of two children.
+ * Binary Search Tree (BST) is a data structure where each node has a maximum of two children.
+ * 
+ * The left child is usually smaller than the right child.
  */
 export class BinarySearchTree {
   /**
    * The root of the tree
    */
-  root: Node | null;
+  root: TreeNode | null;
 
   constructor() {
     this.root = null;
@@ -140,7 +124,7 @@ export class BinarySearchTree {
    * @param value Value to insert into BST
    */
   insert(value: number) {
-    const node = new Node(value);
+    const node = new TreeNode(value);
 
     if (this.root === null) {
       this.root = node;
@@ -152,7 +136,7 @@ export class BinarySearchTree {
   /**
    * Find the maximum value in the tree.
    */
-  max(node: Node): number {
+  max(node: TreeNode): number {
     // this is the maxium value
     if (!node.right) {
       return node.value;
@@ -164,7 +148,7 @@ export class BinarySearchTree {
   /**
    * Find the minimum value in the tree.
    */
-  min(node: Node): number {
+  min(node: TreeNode): number {
     // this is the minimum value
     if (!node.left) {
       return node.value;
@@ -194,78 +178,11 @@ export class BinarySearchTree {
     this.root.visit();
   }
 
-  traverseInorder(node?: Node | null) {
+  traverseInOrder(node?: TreeNode | null) {
     if (!node) return;
 
-    this.traverseInorder(node?.left);
+    this.traverseInOrder(node?.left);
     console.log(node.value);
-    this.traverseInorder(node?.right);
+    this.traverseInOrder(node?.right);
   }
 }
-
-//---------------------------------------------
-
-// class Tree
-
-//   // Traverse Postorder
-//   public void traversePostOrder(Node node) {
-//   if (node != null) {
-//     traversePostOrder(node.left);
-//     traversePostOrder(node.right);
-//     System.out.print(" " + node.key);
-//   }
-//   }
-
-//   // Traverse Preorder
-//   public void traversePreOrder(Node node) {
-//   if (node != null) {
-//     System.out.print(" " + node.key);
-//     traversePreOrder(node.left);
-//     traversePreOrder(node.right);
-//   }
-//   }
-//   void postorder(Node node) {
-//     if (node == null)
-//       return;
-
-//     // Traverse left
-//     postorder(node.left);
-//     // Traverse right
-//     postorder(node.right);
-//     // Traverse root
-//     System.out.print(node.item + "->");
-//     }
-
-//     void inorder(Node node) {
-//     if (node == null)
-//       return;
-
-//     // Traverse left
-//     inorder(node.left);
-//     // Traverse root
-//     System.out.print(node.item + "->");
-//     // Traverse right
-//     inorder(node.right);
-//     }
-
-//     void preorder(Node node) {
-//     if (node == null)
-//       return;
-
-//     // Traverse root
-//     System.out.print(node.item + "->");
-//     // Traverse left
-//     preorder(node.left);
-//     // Traverse right
-//     preorder(node.right);
-//     }
-
-//     // Start by searching the root
-//     Tree.prototype.search = function (val) {
-//       const found = this.root.search(val)
-//       if (found !== null) {
-//         return found.value
-//       }
-//       // not found
-//       return null
-//     }

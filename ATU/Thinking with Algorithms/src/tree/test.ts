@@ -1,4 +1,4 @@
-import { BinarySearchTree, Node } from './BinarySearchTree';
+import { BinarySearchTree, TreeNode } from './BinarySearchTree';
 
 /**
  * Stack test.
@@ -11,6 +11,7 @@ describe('Binary Tree ', () => {
     expect(typeof BinarySearchTree.prototype.constructor).toEqual('function');
   });
 
+
   test(' has nodes', () => {
     const tree = new BinarySearchTree();
 
@@ -20,6 +21,9 @@ describe('Binary Tree ', () => {
     // root children
     tree.insert(76);
     tree.insert(21);
+
+    // expect(tree.root?.left?.value).toEqual(21);
+    // expect(tree.root?.right?.value).toEqual(76);
 
     // third level
     tree.insert(82);
@@ -37,6 +41,5 @@ describe('Binary Tree ', () => {
     tree.insert(63);
     tree.insert(91);
 
-    // expect(stack.pop()).toEqual(2);
   });
 });

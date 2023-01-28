@@ -10,11 +10,13 @@ There are many more resources on algorithms such as [The Algorithms](https://git
 This section contains algorithms in the following categories:
 
 * Binary Search, Linear Search 
-* 
+* Bubble Sort
 * 
 
 The section showcases the following data structures:
 
+* Graph
+* Queue
 * Stack
 * Tree
 
@@ -45,3 +47,7 @@ yarn test -- --group=unit/bar --group=unit/foo
 // execute tests in the unit group (including unit/bar and unit/foo groups)
 yarn test -- --group=unit
 ```
+
+## Resources
+
+https://www.toptal.com/developers/sorting-algorithms/bubble-sort
