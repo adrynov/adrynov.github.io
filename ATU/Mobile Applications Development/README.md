@@ -8,6 +8,7 @@ This project mimics the [MacDonalds' Interface Concept](https://dribbble.com/sho
 
 ![Concept](mcdonalds.png "McDonald's")
 
+I am learning React Native so the application only shows the front page at the moment. Other functionality will be added as I progress.
 
 ## Indicative Knowledge
 
