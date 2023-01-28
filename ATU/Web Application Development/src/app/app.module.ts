@@ -4,21 +4,26 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { ContactComponent } from './main/contact.component';
+
 import { MainComponent } from './main/main.component';
 import { PortfolioItemComponent } from './portfolio/porfolio-item.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
 import { HeroComponent } from './components/hero/hero.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+const APP_COMPONENTS = [
+  HeroComponent, ContactComponent, FooterComponent
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ContactComponent,
     PortfolioComponent,
     PortfolioItemComponent,
-    HeroComponent
+    ...APP_COMPONENTS
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
