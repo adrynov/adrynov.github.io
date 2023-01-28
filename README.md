@@ -13,24 +13,11 @@ You also find a series of projects that I created for each module/subject I stud
 
 They are different from my final assignments, as I wanted to strenthen 
 
-## Technology
+## Credits
 
-- This repository is hosted on GitHub
-- This website is hosted by GitHub docs feature.
-
-[How to Create a GitHub Portfolio 🙋🏻‍♀️](https://github.com/katiehuangx/How-to-Create-a-GitHub-Portfolio/blob/main/README.md)
+[Create a GitHub Portfolio 🙋🏻‍♀️](https://github.com/katiehuangx/How-to-Create-a-GitHub-Portfolio/blob/main/README.md)
 
 [Arsha Bootstrap template](https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/) was used for content presentation.
-
-
-TODO:
-
-https://yourbrainoncomputers.com/using-github-to-build-a-portfolio-ultimate-guide/
-https://github.com/katiehuangx/How-to-Create-a-GitHub-Portfolio/blob/main/README.md
-https://towardsdatascience.com/how-to-create-a-compelling-github-portfolio-a229e7472a92
-https://www.dataquest.io/blog/how-to-share-data-science-portfolio/
-https://betterprogramming.pub/how-to-generate-awesome-github-profile-portfolio-pages-de6ff0d79e2d
-https://medium.com/@evanca/set-up-your-portfolio-website-in-less-than-10-minutes-with-github-pages-d0efa8ff56fd
 
 
 ## Content

@@ -16,11 +16,10 @@ export class PortfolioItemComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.item);
+    // console.log(this.item);
   }
 
   deleteItem() {
-    console.log('Deleting item ' + this.item);
     this.deleted.emit(this.item);
   }
 }

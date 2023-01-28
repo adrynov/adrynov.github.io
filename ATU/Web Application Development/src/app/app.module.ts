@@ -9,13 +9,16 @@ import { MainComponent } from './main/main.component';
 import { PortfolioItemComponent } from './portfolio/porfolio-item.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 
+import { HeroComponent } from './components/hero/hero.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     ContactComponent,
     PortfolioComponent,
-    PortfolioItemComponent
+    PortfolioItemComponent,
+    HeroComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

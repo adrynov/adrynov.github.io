@@ -76,7 +76,7 @@ export class PortfolioComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.items);
+    // console.log(this.items);
   }
 
   onItemDeleted(item: PortfolioItem) {
