@@ -11,8 +11,7 @@ const Category = (category, index) => (
 const Categories = () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text1}>Hello</Text>
-            <Text style={styles.text1}>how are you??</Text>
+          
             <View style={styles.categories}>
                 {categories.map((category, index) =>
                     // <Text style={styles.category}>Hello</Text>
@@ -52,7 +51,7 @@ const Categories = () => {
 }
 
 const styles = StyleSheet.create({
-    container: { paddingTop: 40 },
+    container: { paddingTop: 40, marginTop: 20, },
     text1: {
         fontSize: 30,
         fontWeight: 'bold',
