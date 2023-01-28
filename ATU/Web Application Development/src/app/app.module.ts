@@ -4,27 +4,31 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+import { MainComponent } from './layout/main.component';
+import { HeroComponent } from './layout/hero/hero.component';
 
-import { MainComponent } from './main/main.component';
 import { PortfolioItemComponent } from './portfolio/porfolio-item.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
-import { AboutComponent } from './about/about.component';
+import { AboutComponent } from './components/about/about.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { HeroComponent } from './components/hero/hero.component';
+import { CtaComponent } from './components/cta/cta.component';
 import { FaqComponent } from './components/faq/faq.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { PricingComponent } from './components/pricing/pricing.component';
-import { WhyusComponent } from './whyus/whyus.component';
-import { SkillsComponent } from './skills/skills.component';
-import { TeamComponent } from './team/team.component';
-import { ServicesComponent } from './services/services.component';
-import { CtaComponent } from './cta/cta.component';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ServicesComponent } from './components/services/services.component';
+import { TeamComponent } from './components/team/team.component';
+import { WhyusComponent } from './components/whyus/whyus.component';
 
+
+const APP_LAYOUT = [
+  FooterComponent, HeroComponent, 
+];
 
 const APP_COMPONENTS = [
-  ClientsComponent, ContactComponent, FaqComponent, FooterComponent, HeroComponent, PricingComponent, AboutComponent, WhyusComponent
+  ClientsComponent, ContactComponent, FaqComponent,  PricingComponent, AboutComponent, WhyusComponent
 ];
 
 @NgModule({
@@ -33,6 +37,7 @@ const APP_COMPONENTS = [
     MainComponent,
     PortfolioComponent,
     PortfolioItemComponent,
+    ...APP_LAYOUT,
     ...APP_COMPONENTS,
     SkillsComponent,
     TeamComponent,
