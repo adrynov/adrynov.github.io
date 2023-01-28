@@ -1,77 +1,70 @@
 import React from 'react';
-import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import { categories } from '../data/categories';
 
-const Category = (category, index) => (
-    <View style={styles.categoryContainer}>
-        <Text style={styles.category}>category</Text>
-    </View>
-);
+const Category = ({ item }) => {
+    return <View style={styles.item}>
+        <TouchableHighlight underlayColor='#EE1C0E' style={styles.itemHighlight}>
+            <View style={{ alignItems: 'center' }}>
+                <Image
+                    source={{ uri: item.image }}
+                    style={styles.itemImage}
+                />
+                <Text style={styles.itemText}>{item.name}</Text>
+
+            </View>
+        </TouchableHighlight>
+    </View>;
+};
 
 const Categories = () => {
     return (
         <View style={styles.container}>
-          
-            <View style={styles.categories}>
-                {categories.map((category, index) =>
-                    // <Text style={styles.category}>Hello</Text>
-                    <Category category="category"></Category>
-                    // <TouchableHighlight
-                    //     underlayColor='#EE1C0E'
-                    //     style={{
-                    //         height: 100,
-                    //         justifyContent: 'center',
-                    //         borderRadius: '50%',
-                    //         paddingLeft: 5,
-                    //         paddingRight: 5,
-                    //         backgroundColor: '#111111',
-                    //     }}
-                    // >
-                    //     <View style={{ alignItems: 'center' }}>
-                    //         <Image
-                    //             source={{ uri: category.image }}
-                    //             style={{ width: 40, height: 40, borderRadius: '50%' }}
-                    //         />
-                    //         <Text
-                    //             style={{
-                    //                 fontSize: 14,
-                    //                 color: '#fff',
-                    //                 marginTop: 10,
-                    //                 textAlign: 'center',
-                    //             }}
-                    //         >
-                    //             {category.name}
-                    //         </Text>
-                    //     </View>
-                    // </TouchableHighlight>
-                )}
-            </View>
+            {categories.map((item, index) => {
+                return <Category item={item}  />;
+            })}
         </View>
+
+        
     );
 }
 
-const styles = StyleSheet.create({
-    container: { paddingTop: 40, marginTop: 20, },
-    text1: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: "#fff"
+const styles = {
+    container: {
+        marginTop: 20,
+        marginHorizontal: "auto",
+        width: 400,
+        flexDirection: "row",
+        flexWrap: "wrap"
     },
-    categories: {
-        marginTop: 30,
-        flexDirection: 'row',
-        flexWrap: 'wrap',
-        justifyContent: 'space-between',
-    },
-    categoryContainer: {
+    item: {
+        flex: 1,
+        minWidth: 100,
+        maxWidth: 100,
+        height: 100,
         width: '30%',
-        marginBottom: 20,
+        justifyContent: "center",
+        alignItems: "center",
+
+        // paddingLeft: 10,
+        // paddingRight: 10,
+        //  marginTop: 10,
     },
-    category: {
-        color: "#fff",
+    itemHighlight: {
+        justifyContent: 'center',
+        // borderRadius: '50%',
+        paddingLeft: 5,
+        paddingRight: 5,
+        backgroundColor: '#111111',
+    },
+    itemImage: {
+        width: 50, height: 50
+    },
+    itemText: {
+        color: '#fff',
+        fontSize: 14,
+        marginTop: 10,
     }
-
-});
-
+};
 
 export default Categories;
