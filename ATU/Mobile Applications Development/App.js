@@ -3,15 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Header  from './components/Header';
 import Categories from './components/Categories';
+import Popular from './components/Popular';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Header />
       <Categories />
-      {/* 
-			
-			<Popular /> */}
+      <Popular />
       <StatusBar style="auto" />
     </View>
   );
@@ -20,17 +19,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // height: '100%',
     padding: 24,
     paddingTop: 55,
     paddingBottom: 75,
     backgroundColor: '#000',  
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
   text: {
     color: "#fff",
   },
-  text1: {
+  header: {
     fontSize: 30,
     fontWeight: 'bold',
     color: "#fff"

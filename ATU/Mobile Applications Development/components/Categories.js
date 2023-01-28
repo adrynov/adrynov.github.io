@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
-import { categories } from '../data/categories';
+import { ProductCategories as categories } from '../data';
 
 const Category = ({ item }) => {
     return <View style={styles.item}>
@@ -21,11 +21,9 @@ const Categories = () => {
     return (
         <View style={styles.container}>
             {categories.map((item, index) => {
-                return <Category item={item}  />;
+                return <Category item={item} key={index}  />;
             })}
         </View>
-
-        
     );
 }
 
@@ -33,6 +31,7 @@ const styles = {
     container: {
         marginTop: 20,
         marginHorizontal: "auto",
+        paddingLeft: 0,
         width: 400,
         flexDirection: "row",
         flexWrap: "wrap"
@@ -43,16 +42,9 @@ const styles = {
         maxWidth: 100,
         height: 100,
         width: '30%',
-        justifyContent: "center",
-        alignItems: "center",
-
-        // paddingLeft: 10,
-        // paddingRight: 10,
-        //  marginTop: 10,
     },
     itemHighlight: {
         justifyContent: 'center',
-        // borderRadius: '50%',
         paddingLeft: 5,
         paddingRight: 5,
         backgroundColor: '#111111',
