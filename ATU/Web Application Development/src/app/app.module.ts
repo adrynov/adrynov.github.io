@@ -12,6 +12,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PricingComponent } from './pricing/pricing.component';
 
 const APP_COMPONENTS = [
   HeroComponent, ContactComponent, FooterComponent
@@ -23,7 +24,8 @@ const APP_COMPONENTS = [
     MainComponent,
     PortfolioComponent,
     PortfolioItemComponent,
-    ...APP_COMPONENTS
+    ...APP_COMPONENTS,
+    PricingComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
