@@ -10,7 +10,7 @@ There are many more resources on algorithms such as [The Algorithms](https://git
 This section contains algorithms in the following categories:
 
 * Binary Search, Linear Search 
-* Bubble Sort
+* Bubble Sort, Insertion Sort, Merge Sort
 * 
 
 The section showcases the following data structures:
@@ -22,7 +22,7 @@ The section showcases the following data structures:
 
 ## Configuration
 
-Have have Node.js 10+ installed.
+Have Node.js 10+ installed.
 
 Install NPM packages: `npm i` or `yarn`
 

@@ -1,4 +1,4 @@
-import { generateIntArray } from '../array/utils';
+import { generateIntArray } from '../arrays/utils';
 
 import { bubbleSort } from './BubbleSort';
 import { insertionSort } from './InsertionSort';

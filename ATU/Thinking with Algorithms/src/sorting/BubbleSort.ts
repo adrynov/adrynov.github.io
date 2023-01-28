@@ -1,4 +1,4 @@
-import { swap } from "../array/utils";
+import { swap } from "../arrays/utils";
 
 /**
  * Sort an array using Bubble sort.
