@@ -320,5 +320,4 @@ __pycache__/
 bin/
 obj/
 
-
-Books/
+dist/
