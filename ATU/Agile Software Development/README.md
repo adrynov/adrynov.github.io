@@ -13,7 +13,7 @@ If you re-enter the same car number, it means the car has exited the car park an
 
 - Unit Testing, JUnit and white-box testing strategies, mock objects
 - Code coverage and code metrics
-- Refactoring software
+- Refactoring softwarev
 
 ## Requirements
 
@@ -26,6 +26,8 @@ easily opened using the included **pom.xml**
 Execute the main() method in th **Runner.java** class
 
 ## Credits
+
+- [Parking Lot | GitHub](https://github.com/upasek/Parking_Lot) - refactored for my use
 
 ## Licensing
 

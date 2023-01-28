@@ -4,6 +4,8 @@ import java.time.LocalDateTime;
 
 /**
  * Payment for car parking.
+ * <p>
+ * This class requires serious refactoring and testing as it returns incorrect results!
  */
 public class Payment {
     private static float HourAmount = 30;

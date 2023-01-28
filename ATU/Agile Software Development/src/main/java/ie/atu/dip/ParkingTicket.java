@@ -7,7 +7,7 @@ import java.util.Objects;
 /**
  * Parking ticket.
  */
-public class ParkingTicket implements Comparable<ParkingTicket> {
+public class ParkingTicket {
 
     /**
      * Date and time of vehicle entry
@@ -20,9 +20,9 @@ public class ParkingTicket implements Comparable<ParkingTicket> {
     private LocalDateTime exit;
 
     /**
-     * The spot number on the parking.
+     * Parking space number.
      */
-    private int spot;
+    private int space;
 
     /**
      * Car details
@@ -45,12 +45,12 @@ public class ParkingTicket implements Comparable<ParkingTicket> {
         this.car = car;
     }
 
-    public int getSpot() {
-        return spot;
+    public int getSpace() {
+        return space;
     }
 
-    public void setSpot(int spot) {
-        this.spot = spot;
+    public void setSpace(int space) {
+        this.space = space;
     }
 
     public String getEntry() {
@@ -65,15 +65,6 @@ public class ParkingTicket implements Comparable<ParkingTicket> {
 
     public void setExitTime() {
         this.exit = LocalDateTime.now();
-    }
-
-    /**
-     * w
-     * Allows to order parking tickets by car registration.
-     */
-    @Override
-    public int compareTo(ParkingTicket other) {
-        return this.getCar().getPlateNumber().compareTo(other.car.getPlateNumber());
     }
 
     /**
@@ -100,7 +91,7 @@ public class ParkingTicket implements Comparable<ParkingTicket> {
         System.out.println("Car color: " + this.getCar().getColor());
         System.out.println("Car type: " + this.getCar().getType());
 
-        System.out.println("Parking spot: " + this.getSpot());
+        System.out.println("Parking spot: " + this.getSpace());
         System.out.println("Parking time: " + this.getEntry());
 
         if (this.exit != null) {

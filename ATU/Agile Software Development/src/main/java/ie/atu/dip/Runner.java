@@ -63,7 +63,7 @@ public class Runner {
                 // create a parking ticket
                 var ticket = new ParkingTicket();
                 ticket.setCar(car);
-                ticket.setSpot(spotNumber);
+                ticket.setSpace(spotNumber);
 
                 parking.openTicket(ticket);
 

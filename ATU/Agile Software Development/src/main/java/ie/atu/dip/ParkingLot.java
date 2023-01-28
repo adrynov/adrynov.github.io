@@ -87,11 +87,9 @@ public class ParkingLot {
      * @return Removed ticket
      */
     public ParkingTicket closeTicket(String plateNumber) {
-        ParkingTicket ticket = null;
-
         for (int i = 0; i < tickets.size(); i++) {
             if (plateNumber.equals(tickets.get(i).getPlate())) {
-                ticket = tickets.get(i);
+                ParkingTicket ticket = tickets.get(i);
                 ticket.setExitTime();
 
                 // free the spot
@@ -103,7 +101,7 @@ public class ParkingLot {
             }
         }
 
-        return ticket;
+        return null;
     }
 
 }
