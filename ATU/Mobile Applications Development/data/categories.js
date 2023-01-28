@@ -6,7 +6,7 @@ export const categories = [
   },
   {
     image: "https://s7d1.scene7.com/is/image/mcdonalds/mcdonalds-GarlicMayoChickenGrilledWrap-832:product-header-desktop?wid=829&hei=453&dpr=off",
-    name: "Wraps and Salads",
+    name: "Wraps",
   },
   {
     image:
