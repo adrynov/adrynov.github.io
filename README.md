@@ -1,8 +1,6 @@
 # Andrei Drynov
 
-This is my portfolio (and a digital repository) containing a series of repositories/sections that document and showcase projects from each module / subject I studied as part of my **Higher Diploma in Computer Science** programme at [Atlantice Technological University](https://www.atu.ie/)
-
-I completed the following modules in 2022:
+This is my portfolio (and a digital repository) containing a series of repositories/sections that document and showcase projects from each module / subject I studied as part of my **Higher Diploma in Computer Science** programme at [Atlantice Technological University](https://www.atu.ie/) in 2022:
 
 - Agile Software Development
 - Computer Architecture and Technology Convergence
