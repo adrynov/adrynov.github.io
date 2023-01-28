@@ -9,8 +9,7 @@ const Header = () => {
                 >
                     <Image
                         source={{
-                              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png",
-                            // uri: 'assets/images/logo.png'
+                              uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png",                            
                         }}
                         style={styles.logo}
                     />
