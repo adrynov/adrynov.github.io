@@ -40,7 +40,7 @@ export class PortfolioComponent implements OnInit {
     {
       image: 'assets/img/portfolio/cloud-computing.jpg',
       title: 'Cloud Computing',
-      description: 'Cloud',
+      description: 'Operating Systems and Cloud Computing',
       kind: 'card',
       url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Operating%20Systems%20and%20Cloud%20Computing'
     }, 
