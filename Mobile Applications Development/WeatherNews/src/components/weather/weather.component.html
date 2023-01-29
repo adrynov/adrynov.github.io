@@ -1,0 +1,19 @@
+<ion-card class="weather-card" *ngIf="forecastInfo">
+  <img src="assets/img/advance-card-alaska.jpg" />
+
+  <ion-item class="top-info">
+    <p item-start>{{city}}, {{country}}</p>
+    <p item-end>{{ weekDay | uppercase }}</p>
+  </ion-item>
+
+  <p class="temperature forecast-icon">
+    <img src="assets/weather/a01d.png" />
+    <span>{{forecastInfo?.temp}}</span><span>&deg;</span>
+  </p>
+
+  <ion-item class="bottom-info">
+    <p class="weather-description">{{forecastInfo?.weather?.description}}</p>
+    <p class="wind-conditions">Wind from: {{forecastInfo?.wind_cdir_full}}</p>
+  </ion-item>
+
+</ion-card>

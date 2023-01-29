@@ -1,0 +1,85 @@
+page-home {
+
+    .error-message {
+        background-color: rgba(255,0,0,.5);
+        padding: 1em;
+        text-align: center;
+        color: white;
+        font-size: 2rem
+    }
+
+   
+    // style weather card
+    ion-card {
+
+        p.temperature {
+            position: absolute;
+            top: 25%;
+            width: 100%;
+            font-weight: bold;
+            color: #fff !important;
+          }
+
+          p.forecast-icon {
+            top: 28%;
+            font-weight: normal;
+            color: #fff !important;
+
+            // weather icon from weatherbit.com
+            img {
+              width: 100px;
+              display: inline-block;
+            }
+
+            //
+            & span {
+                vertical-align: top;
+                padding-top: 5px;
+                font-size: 82px;
+                height: 74px;
+                line-height: 1;
+                display: inline-block;
+              }
+          }
+
+          ion-item.top-info.item p {
+            font-size: 16px;
+            letter-spacing: 1.7px;
+            font-weight: 500;
+            opacity: 0.8;
+            color: #fff !important;
+          }
+
+          ion-item.top-info.item {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 12px 20px !important;
+            background: transparent;
+          }
+
+          ion-item.bottom-info.item {
+            position: absolute;
+            bottom: 5%;
+            width: 100%;
+            background: transparent;
+          }
+
+          ion-item.bottom-info.item p {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 1;
+            text-align: center;
+            // color: #fff !important;
+          }
+
+        }
+
+        .weather-description {
+          color: greenyellow;
+        }
+
+        .wind-conditions {
+          color: white;
+        }
+}

@@ -9,70 +9,71 @@ import { PortfolioItem } from '../models';
 export class PortfolioComponent implements OnInit {
   items: PortfolioItem[] = [
     {
-      id: 1,
-      image: 'assets/img/portfolio/portfolio-1.jpg',
-      title: 'App 1',
-      description: 'App',
+      image: 'assets/img/portfolio/web-development.jpg',
+      title: 'Web',
+      description: 'Web Applications Development',
       kind: 'app',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Web%20Application%20Development'
     },
     {
-      id: 2,
       image: 'assets/img/portfolio/databases.png',
-      title: 'Database Design',
-      description: 'Databases',
+      title: 'Databases',
+      description: 'Database Design and Implementation',
       kind: 'data',
       url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Database%20Design%20and%20Development'
     },
     {
-      id: 5,
-      image: 'assets/img/portfolio/portfolio-5.jpg',
-      title: 'Web 2',
-      description: 'Web',
-      kind: 'web',
+      image: 'assets/img/portfolio/convergence.jpg',
+      title: 'Computers and Technology',
+      description: 'Computer Architecture and Technology Convergence',
+      kind: 'card',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Computer%20Architecture'
     },
     {
-      id: 3,
-      image: 'assets/img/portfolio/portfolio-3.jpg',
-      title: 'App 2',
-      description: 'App',
+      image: 'assets/img/portfolio/oop.png',
+      title: 'OOP',
+      description: 'Object-Oriented Programming',
       kind: 'app',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Object%20Oriented%20Programming'
     },
+  
     {
-      id: 4,
       image: 'assets/img/portfolio/cloud-computing.jpg',
       title: 'Cloud Computing',
       description: 'Cloud',
       kind: 'card',
       url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Operating%20Systems%20and%20Cloud%20Computing'
-    },
+    }, 
     {
-      id: 6,
-      image: 'assets/img/portfolio/portfolio-6.jpg',
-      title: 'App 3',
-      description: 'App',
+      image: 'assets/img/portfolio/mobile2.png',
+      title: 'OOP',
+      description: 'Object-Oriented Programming',
       kind: 'app',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Mobile%20Applications%20Development'
     },
     {
-      id: 7,
-      image: 'assets/img/portfolio/portfolio-7.jpg',
-      title: 'Card 1',
-      description: 'card',
+      image: 'assets/img/portfolio/networking.png',
+      title: 'Networking',
+      description: 'Network Technologies',
       kind: 'card',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Network%2Technologies'
     },
     {
-      id: 8,
-      image: 'assets/img/portfolio/portfolio-8.jpg',
-      title: 'Card 3',
-      description: 'Card',
-      kind: 'card',
-    },
-    {
-      id: 9,
-      image: 'assets/img/portfolio/portfolio-9.jpg',
-      title: 'Web 3',
-      description: 'Web',
+      image: 'assets/img/portfolio/algorithms.png',
+      title: 'Algorithms',
+      description: 'Thinking with Algorithms',
       kind: 'web',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Thinking%20with%20Algorithms'
     },
+  
+    {
+      image: 'assets/img/portfolio/scrum.jpg',
+      title: 'Agile',
+      description: 'Agile Software Development',
+      kind: 'app',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Agile%20Software%20Development'
+    },
+
   ];
 
   constructor() {}

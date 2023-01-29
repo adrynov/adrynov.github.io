@@ -1,5 +1,5 @@
 export interface PortfolioItem {
-  id: number;
+  id?: number;
   image: string;
   title: string;
   description?: string;

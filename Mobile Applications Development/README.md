@@ -2,7 +2,7 @@
 
 This project demonstrates my academic qualifications in mobile application development.
 
-My final project at the [University](https://atu.ie) was to create a list of players using Ionic 3. 
+My final project at the [University](https://atu.ie) was to create a list of players using Ionic 3 (archived). I am also experienced in developing native Android.
 
 ## Indicative Knowledge
 
@@ -11,20 +11,33 @@ My final project at the [University](https://atu.ie) was to create a list of pla
 - Widgets and Services
 - Location-aware Services and Mapping
 
-## Learning Objectives
+## Weather & News app
 
-After years of mobile application development in Ionic and native Android, I decided to give [React Native](http://reactnative.dev/) a try.
+A very simple Ionic mobile application that [reads news, weather, and country data](./WeatherNews) from
+internet resources.
 
-The project in this section mimics the [MacDonalds' Interface Concept](https://dribbble.com/shots/7049291-McDonald-s-Touch-Interface-Concept) using **React Native**.
+The project requirement was to use Ionic 3 so have that installed (current version of Ionic is 6). 
 
-![Concept](mcdonalds.png "McDonald's")
+If the message "Type 'ModuleWithProviders' is not generic" appears, reinstall Ionic Storage: 
 
-I am learning React Native so the application only shows a bare front page at the moment.
+`npm i @ionic/storage@2.2.0 --save`
 
-- Learn UI basics
-- Additional screens for product or category details
+
+## McDonalds clone
+
+I decided to give [React Native](http://reactnative.dev/) a try, so the project will mimic the [MacDonalds' Interface Concept](https://dribbble.com/shots/7049291-McDonald-s-Touch-Interface-Concept).
+
+![Concept](./McDonalds/Design.png "McDonald's")
+
+I am only beginning to master React Native so the application shows a bare front page at the moment.
+
+My to-do:
+
+- Learn UI basics using React Native
+- Add screens for product or category details
 - Determine the best way to make API calls (axios?)
-- Advanced
+- Databases in React Native
+- Advanced React features such as hooks, Redux, etc.
 
 ## Requirements
 

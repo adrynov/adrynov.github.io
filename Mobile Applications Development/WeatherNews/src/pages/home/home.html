@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar transparent>
+    <ion-title>G00411287</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showSettings()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- Request user to select a city first -->
+  <div *ngIf="!city">
+    <h2 text-center ion-text>No City Selected</h2>
+  </div>
+
+  <!-- bad things happen -->
+  <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
+
+  <!-- capital city is found, show weather info -->
+  <div *ngIf="city && countryInfo">
+
+    <h2 text-center ion-text>News & Weather from {{city}}, {{ country }}</h2>
+
+    <!-- country info -->
+    <div text-center>
+      <img [src]="countryInfo?.flags.png" style="height:100px;" />
+      <!-- <p>Lat: {{countryInfo?.lat}}</p> -->
+    </div>
+
+    <hr />
+
+    <!-- Weather info -->
+    <h2 text-center>Weather Forecast</h2>
+    <weather-card></weather-card>
+
+    <hr />
+
+    <h2 text-center>Latest News</h2>
+    <p>Do you want to see the top headlines for your country?</p>
+    <button ion-button full large (click)="openNews()">Fetch News</button>
+
+  </div>
+
+
+</ion-content>
+
+<!-- <ion-footer translucent no-padding>
+  <button ion-button color="blue" full large (click)="selectCity()" *ngIf="!city || errorMessage">Select City</button>
+  <button ion-button color="blue" full large (click)="selectCity()" *ngIf="city && !errorMessage">DO SOMTHING</button>
+</ion-footer> -->

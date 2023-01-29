@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      News
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h2 text-center *ngIf="articles">News from {{countryCode}}</h2>
+  <h2 text-center *ngIf="!articles">No News from {{countryCode}}</h2>
+
+  <ion-list no-lines *ngIf="articles">
+    <ion-item *ngFor="let article  of articles">
+
+      <!-- <img src="{{article.urlToImage}}" /> -->
+
+      <a href="{{ article.url }}" target="_blank">
+        <ion-card>
+          <img src="{{article.urlToImage}}" />
+          <ion-card-content>
+            <ion-card-title text-wrap>
+              {{article.title | ellipsis: 45 }}
+            </ion-card-title>
+            <p text-wrap>
+              The most popular industrial group ever, and largely
+              responsible for bringing the music to a mass audience.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </a>
+
+      <!-- <ion-thumbnail slot="start">
+        <img src="">
+      </ion-thumbnail>
+      <ion-label>{{article.title}}</ion-label> -->
+    </ion-item>
+  </ion-list>
+
+</ion-content>

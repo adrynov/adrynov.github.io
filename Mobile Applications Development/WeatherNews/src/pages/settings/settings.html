@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar transparent>
+    <ion-title>
+      Settings
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="showAbout()">
+        <ion-icon name="information-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <p>Selected city: <strong>{{city}}</strong></p>
+
+  <p>Please enter the city name below for which weather data will be displayed</p>
+
+  <ion-item>
+    <ion-label color="primary" stacked>City Name</ion-label>
+    <ion-input [(ngModel)]="city"></ion-input>
+  </ion-item>
+
+  <br />
+
+  <p>Select units in which the weather data will be shown</p>
+
+  <ion-list radio-group [(ngModel)]="units" no-lines>
+
+    <ion-item>
+      <ion-label>Scientific (Kelvin, m/s, mm)</ion-label>
+      <ion-radio value="S"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Metric (Celsius, m/s, mm)</ion-label>
+      <ion-radio value="M" checked></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Fahrenheit (F, mph, in)</ion-label>
+      <ion-radio value="I"></ion-radio>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer translucent no-padding>
+  <button ion-button color="blue" full large (click)="saveSettings()">Save Settings</button>
+</ion-footer>
