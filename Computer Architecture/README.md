@@ -24,7 +24,6 @@ The script prompts the user to enter a mathematical operation and the operand. I
 
 ## References
 
-Check out other useful scripts:
+Recommend other interesting scripts:
 
-
-https://github.com/alexanderepstein/Bash-Snippets
+- https://github.com/alexanderepstein/Bash-Snippets

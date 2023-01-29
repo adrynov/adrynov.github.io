@@ -46,8 +46,8 @@ export class PortfolioComponent implements OnInit {
     }, 
     {
       image: 'assets/img/portfolio/mobile2.png',
-      title: 'OOP',
-      description: 'Object-Oriented Programming',
+      title: 'Mobile',
+      description: 'Mobile Application Development',
       kind: 'app',
       url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Mobile%20Applications%20Development'
     },
