@@ -19,6 +19,11 @@ export class PortfolioItemComponent implements OnInit {
     // console.log(this.item);
   }
 
+  handleClick(url: string | undefined) {
+    if (!url) return;
+    window.open(url, '_blank');
+  }
+
   deleteItem() {
     this.deleted.emit(this.item);
   }

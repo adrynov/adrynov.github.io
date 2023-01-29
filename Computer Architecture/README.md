@@ -1,16 +1,22 @@
-# Database Design and Development
+# Computer Architecture and Technology Convergence
 
-This project showcases my academic qualifications in database design and development techniques.
+This module's focus is in internal workings, structure, architecture and organisation of modern computer architectures.
 
 ## Indicative Knowledge
 
-- Relational Database design - Primary Keys, Foreign Keys. Mapping ERD to a relational schema, data normalisation, relational integrity, keys, indexes; database transactions, ACID properties
+- Demonstrate an understanding of the components in modern computer architectures.
+- Troubleshoot common computer hardware and software problems.
+- Describe the topologies of computer networks.
+- Explain the role of abstraction in the development of computer hardware and software
 
-SQL: Schema definition: Create, Drop, Alter tables, views, sequences and indexes. Data manipulation in SQL: Insert, update and
-Delete tables and rows. SQL queries: basic queries, grouping, ordering, built-in SQL functions, joins, subqueries.
-
-Non-relational storage: Schema-less storage (no SQL); XML, Key Value and Document Store
+I created a small script that generates math tables. 
 
 ## Requirements
 
+- Linux shell
 
+Execute the script: `sh ./math_table_generator.sh`
+
+The script prompts the user to enter a mathematical operation and the operand. It displays the Math Table corresponding to the operand being used:
+
+![table](math_table.png)

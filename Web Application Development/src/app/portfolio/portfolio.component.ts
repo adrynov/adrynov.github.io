@@ -21,6 +21,7 @@ export class PortfolioComponent implements OnInit {
       title: 'Database Design',
       description: 'Databases',
       kind: 'data',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Database%20Design%20and%20Development'
     },
     {
       id: 5,
@@ -38,10 +39,11 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: 4,
-      image: 'assets/img/portfolio/portfolio-4.jpg',
-      title: 'Card 2',
-      description: 'Card',
+      image: 'assets/img/portfolio/cloud-computing.jpg',
+      title: 'Cloud Computing',
+      description: 'Cloud',
       kind: 'card',
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Operating%20Systems%20and%20Cloud%20Computing'
     },
     {
       id: 6,
@@ -80,8 +82,6 @@ export class PortfolioComponent implements OnInit {
   }
 
   onItemDeleted(item: PortfolioItem) {
-    console.log('Lets remove the item from the list');
-
     if (this.items.includes(item)) {
       const index = this.items.indexOf(item);
       this.items.splice(index, 1);

@@ -1,27 +1,26 @@
 # Andrei Drynov
 
-This is my portfolio (and a digital repository) containing a series of repositories/sections that document and showcase projects from each module / subject I studied as part of my **Higher Diploma in Computer Science** programme at [Atlantic Technological University](https://www.atu.ie/) in 2022:
+This is my portfolio (and a digital repository) containing a series of repositories/sections that document and showcase projects from each module / subject I studied as part of my **Higher Diploma in Computer Science** programme at <a href="https://www.atu.ie/" target="_blank">Atlantic Technological University</a> in 2022:
 
-- Agile Software Development
-- Computer Architecture and Technology Convergence
-- Computational Thinking with Algorithms
-- Database Design & Development
-- Mobile Applications Development
-- Object Oriented Software Development (2 semesters)
-- Operating Systems and Cloud Computing
-- Thinking with Algorithms
-- Web Applications Development
+- [Agile Software Development](Agile%20Software%20Development/README.md)
+- [Computer Architecture and Technology Convergence](Computer%20Architecture/README.md)
+- [Computational Thinking with Algorithms](Thinking%20with%20Algorithms/README.md)
+- [Database Design & Development](Database%20Design%20and%20Development/README.md)
+- [Mobile Applications Development](Mobile%20Applications%20Development/README.md)
+- [Network Technologies](Network%20Technologies/README.md)
+- [Object Oriented Software Development](Object%20Oriented%20Development) (2 semesters)
+- [Operating Systems and Cloud Computing](Operating%20Systems%20and%20Cloud%20Computing/README.md)
+- [Web Applications Development](Web%20Application%20Development/README.md)
 
 While learning various critical skills, I am also gathering a number of new projects to present in the future.
 
 ## Requirements 
 
-This repository uses GitHub Pages to host my portfolio web site https://adrynov.github.io/
+This repository uses GitHub Pages to <a href="https://adrynov.github.io/" target="_blank">host my portfolio</a>. 
 
 The website is build with Angular 15.
 
 ## References
-
 
 ### Courses
 

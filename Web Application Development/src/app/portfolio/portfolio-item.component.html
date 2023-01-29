@@ -1,9 +1,9 @@
-<div (click)="deleteItem()">
+<div (click)="handleClick(item?.url)">
     <div class="portfolio-img"><img src="{{ item?.image }}" class="img-fluid" alt=""></div>
     <div class="portfolio-info">
         <h4>{{ item?.title}}</h4>
         <p>{{ item?.description }}</p>
         <!-- <a href="{{item?.image}}" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" [title]="item?.title"><i class="bx bx-plus"></i></a> -->
-        <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+        <a [href]="item?.url" class="details-link" title="More Details" target="_blank"><i class="bx bx-link"></i></a>
     </div>
 </div>

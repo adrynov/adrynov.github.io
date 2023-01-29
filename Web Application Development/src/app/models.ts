@@ -3,5 +3,6 @@ export interface PortfolioItem {
   image: string;
   title: string;
   description?: string;
-  kind: string;
+  kind?: string;
+  url?: string;
 }
