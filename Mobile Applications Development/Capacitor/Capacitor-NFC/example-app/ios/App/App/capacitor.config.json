@@ -1,0 +1,8 @@
+{
+  "appId": "com.adrynov.capacitor.examples",
+  "appName": "CapacitorExample",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/opt/android-studio/bin/studio.sh"
+}

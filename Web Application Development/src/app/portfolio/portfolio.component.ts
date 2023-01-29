@@ -56,7 +56,7 @@ export class PortfolioComponent implements OnInit {
       title: 'Networking',
       description: 'Network Technologies',
       kind: 'card',
-      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Network%2Technologies'
+      url: 'https://github.com/adrynov/adrynov.github.io/tree/main/Network%20Technologies'
     },
     {
       image: 'assets/img/portfolio/algorithms.png',

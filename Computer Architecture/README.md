@@ -20,3 +20,11 @@ Execute the script: `sh ./math_table_generator.sh`
 The script prompts the user to enter a mathematical operation and the operand. It displays the Math Table corresponding to the operand being used:
 
 ![table](math_table.png)
+
+
+## References
+
+Check out other useful scripts:
+
+
+https://github.com/alexanderepstein/Bash-Snippets
