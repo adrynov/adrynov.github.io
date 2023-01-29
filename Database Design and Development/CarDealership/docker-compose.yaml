@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  mysql:
+    image: docker.io/bitnami/mysql:8.0
+    ports:
+      - '3306:3306'
+    environment:
+      # empty root password is recommended only for development
+      # - ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_DATABASE=cardealer
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_AUTHENTICATION_PLUGIN=mysql_native_password
+    # networks:
+    #   - dealer_net
+    volumes:
+      # - ./init.sql:/docker-entrypoint-initdb.d/01_init.sql
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      -  data:/bitnami/mysql/data
+    healthcheck:
+      test: ['CMD', '/opt/bitnami/scripts/mysql/healthcheck.sh']
+      interval: 15s
+      timeout: 5s
+      retries: 6
+
+  adminer:
+      image: adminer
+      # restart: always
+      ports:
+        - 8080:8080      
+
+networks:
+  dealer_net:
+    driver: bridge
+
+volumes:
+  data:
+    driver: local
+    
