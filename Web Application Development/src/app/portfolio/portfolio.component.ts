@@ -17,10 +17,10 @@ export class PortfolioComponent implements OnInit {
     },
     {
       id: 2,
-      image: 'assets/img/portfolio/portfolio-2.jpg',
-      title: 'Web 3',
-      description: 'Web',
-      kind: 'web',
+      image: 'assets/img/portfolio/databases.png',
+      title: 'Database Design',
+      description: 'Databases',
+      kind: 'data',
     },
     {
       id: 5,

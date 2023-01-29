@@ -3,20 +3,20 @@
     <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-            <h2>Projects</h2>
-            <p>These are some of my projects. Use the filter to list them by category.</p>
+            <h2>Digital Projects</h2>
+            <p>Collection of my projects I did for the university. Use the filter to list them by category.</p>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        <!-- <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
+            <li data-filter=".filter-app">Data</li>
+            <li data-filter=".filter-card">Mobile</li>
             <li data-filter=".filter-web">Web</li>
-        </ul>
+        </ul> -->
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
 
-            <afd-portfolio-item *ngFor="let item of items" [item]="item" class="col-lg-4 col-md-6 portfolio-item filter-{{item.kind}}" (deleted)="onItemDeleted($event)"></afd-portfolio-item>
+            <afd-portfolio-item *ngFor="let item of items" [item]="item" class="col-lg-4 col-md-6 portfolio-item filter-{{item.kind}}" ></afd-portfolio-item>
 
         </div>
 
