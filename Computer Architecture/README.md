@@ -27,3 +27,6 @@ The script prompts the user to enter a mathematical operation and the operand. I
 Recommend other interesting scripts:
 
 - https://github.com/alexanderepstein/Bash-Snippets
+- https://github.com/mertcangokgoz/UsefulBashScripts
+
+![alexanderepstein](https://www.osradar.com/wp-content/uploads/2018/11/script2.png)
