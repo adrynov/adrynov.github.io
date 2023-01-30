@@ -2,7 +2,7 @@
 
 This project demonstrates my academic qualifications in mobile application development.
 
-My final project at the [University](https://atu.ie) was to create a list of players using Ionic 3 (archived). I am also experienced in developing native Android.
+My final project at the [University](https://atu.ie) was to create a list of players using Ionic 3 (archived). I am also experienced in developing native Android applications.
 
 ## Indicative Knowledge
 
@@ -18,6 +18,8 @@ internet resources.
 
 The project requirement was to use Ionic 3 so have that installed (current version of Ionic is 6). 
 
+Run the Ionic app the usual way: `npm run start`
+
 If the message "Type 'ModuleWithProviders' is not generic" appears, reinstall Ionic Storage: 
 
 `npm i @ionic/storage@2.2.0 --save`
@@ -29,17 +31,15 @@ I decided to give [React Native](http://reactnative.dev/) a try, so the project 
 
 ![Concept](./McDonalds/Design.png "McDonald's")
 
-I am only beginning to master React Native so the application shows a bare front page at the moment.
+I am only beginning to master React Native so at the moment the application shows a bare front page.
 
-My to-do:
+To-do list:
 
 - Learn UI basics using React Native
 - Add screens for product or category details
 - Determine the best way to make API calls (axios?)
 - Databases in React Native
-- Advanced React features such as hooks, Redux, etc.
-
-## Requirements
+- Apply advanced React features such as hooks, Redux, etc.
 
 Setup the development environment to build and run React Native applications: http://reactnative.dev/docs/environment-setup
 

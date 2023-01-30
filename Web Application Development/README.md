@@ -2,12 +2,9 @@
 
 This project demonstrates my academic qualifications in web application development.
 
-The focus of the module was to introduce students to modern web application and network application development using
-frameworks in high-level programming and scripting languages. The focus is on building light-weight network services,
-particularly web-based services, and integrating those services with modern front-end frameworks
+The focus of the module was to introduce students to modern web application and network application development using frameworks in high-level programming and scripting languages. The focus is on building light-weight network services, particularly web-based services, and integrating those services with modern front-end frameworks.
 
-I generated the web project with Angular CLI 15 and deployed it to https://adrynov.github.io/ -
-my portfolio's frontpage.
+I generated the web project with Angular CLI 15 and deployed it to https://adrynov.github.io/ - my portfolio's frontpage.
 
 ## Indicative Knowledge
 
