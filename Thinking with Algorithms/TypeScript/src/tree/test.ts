@@ -11,7 +11,6 @@ describe('Binary Tree ', () => {
     expect(typeof BinarySearchTree.prototype.constructor).toEqual('function');
   });
 
-
   test(' has nodes', () => {
     const tree = new BinarySearchTree();
 
@@ -40,6 +39,5 @@ describe('Binary Tree ', () => {
     tree.insert(49);
     tree.insert(63);
     tree.insert(91);
-
   });
 });

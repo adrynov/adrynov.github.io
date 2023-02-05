@@ -1,6 +1,6 @@
 /**
  * A Binary Tree node.
- * 
+ *
  * Nodes contain data and also links to the sibling nodes
  */
 export class TreeNode {
@@ -92,97 +92,5 @@ export class TreeNode {
     this.left?.visit(); // visit left
     console.log(this.value);
     this.right?.visit(); // visit right
-  }
-}
-
-/**
- * Binary Search Tree (BST) is a data structure where each node has a maximum of two children.
- * 
- * The left child is usually smaller than the right child.
- */
-export class BinarySearchTree {
-  /**
-   * The root of the tree
-   */
-  root: TreeNode | null;
-
-  constructor() {
-    this.root = null;
-  }
-
-  search(value: number) {
-    //     const found = this.root.search(val)
-    //     if (found !== null) {
-    //       return found.value
-    //     }
-    //     // not found
-    //     return null
-  }
-
-  /**
-   * Add a new value to the Binary Search Tree
-   * @param value Value to insert into BST
-   */
-  insert(value: number) {
-    const node = new TreeNode(value);
-
-    if (this.root === null) {
-      this.root = node;
-    } else {
-      this.root.addNode(node);
-    }
-  }
-
-  /**
-   * Find the maximum value in the tree.
-   */
-  max(node: TreeNode): number {
-    // this is the maxium value
-    if (!node.right) {
-      return node.value;
-    }
-
-    return this.max(node.right);
-  }
-
-  /**
-   * Find the minimum value in the tree.
-   */
-  min(node: TreeNode): number {
-    // this is the minimum value
-    if (!node.left) {
-      return node.value;
-    }
-
-    return this.min(node.left);
-  }
-
-  /**
-   * Remove a value from the tree.
-   * @param value Value to remove from BST
-   */
-  remove(value: number) {
-    this.root = this.root && this.root.removeNode(value);
-  }
-
-  /**
-   * In-order traversal:
-   * - visit all the nodes in the left subtree
-   * - visit the root
-   * - visit all the nodes in the right subtree
-   */
-  traverse() {
-    // empty tree
-    if (!this.root) return;
-
-    this.root.visit();
-  }
-
-  traverseInOrder(node?: TreeNode | null) {
-    if (!node) return;
-
-    this.traverseInOrder(node?.left);
-    console.log(node.value);
-    this.traverseInOrder(node?.right);
   }
 }
