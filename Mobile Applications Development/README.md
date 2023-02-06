@@ -11,19 +11,20 @@ My final project at the [University](https://atu.ie) was to create a list of pla
 - Widgets and Services
 - Location-aware Services and Mapping
 
-## Weather & News app
 
-A very simple Ionic mobile application that [reads news, weather, and country data](./WeatherNews) from
-internet resources.
 
-The project requirement was to use Ionic 3 so have that installed (current version of Ionic is 6). 
+    Now get cooking! 🍽
+      cd WeatherApp
+      yarn start
+      yarn android
 
-Run the Ionic app the usual way: `npm run start`
+    With Expo:
+      cd WeatherApp
+      yarn expo:start
 
-If the message "Type 'ModuleWithProviders' is not generic" appears, reinstall Ionic Storage: 
+## Weather App
 
-`npm i @ionic/storage@2.2.0 --save`
-
+A simple React Native application created with the [Ignite boilerplate](https://github.com/infinitered/ignite)
 
 ## McDonalds clone
 
@@ -44,6 +45,21 @@ To-do list:
 Setup the development environment to build and run React Native applications: http://reactnative.dev/docs/environment-setup
 
 To start the application, execute `yarn expo start`
+
+
+
+## Weather & News (Ionic)
+
+A very simple Ionic mobile application that [reads news, weather, and country data](./WeatherNews) from
+internet resources.
+
+The project requirement was to use Ionic 3 so have that installed (current version of Ionic is 6).
+
+Run the Ionic app the usual way: `npm run start`
+
+If the message "Type 'ModuleWithProviders' is not generic" appears, reinstall Ionic Storage:
+
+`npm i @ionic/storage@2.2.0 --save`
 
 
 ## 📝 Notes
