@@ -12,16 +12,6 @@ My final project at the [University](https://atu.ie) was to create a list of pla
 - Location-aware Services and Mapping
 
 
-
-    Now get cooking! 🍽
-      cd WeatherApp
-      yarn start
-      yarn android
-
-    With Expo:
-      cd WeatherApp
-      yarn expo:start
-
 ## Weather App
 
 A simple React Native application created with the [Ignite boilerplate](https://github.com/infinitered/ignite)
