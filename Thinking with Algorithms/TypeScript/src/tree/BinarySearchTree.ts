@@ -6,7 +6,7 @@ import { TreeNode } from './TreeNode';
  * Items to the left are less than the parent. Items to the right are greater than the parent.
  * The left child is smaller than the right child.
  *
- *
+ *  Worst search time: O(n)
  *      6
  *   4     8
  * 0  5      19
